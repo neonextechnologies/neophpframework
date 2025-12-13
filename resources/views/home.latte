@@ -1,0 +1,36 @@
+{layout 'layouts/app.latte'}
+
+{block title}Welcome to NeoCore{/block}
+
+{block content}
+<div class="card">
+    <h1>Welcome to NeoCore Framework</h1>
+    <p>A lightweight, explicit, and predictable PHP framework.</p>
+    <p>This is a Latte template example.</p>
+    
+    <h2>Features</h2>
+    <ul>
+        <li>✅ Explicit Routing</li>
+        <li>✅ Cycle ORM Integration</li>
+        <li>✅ Latte Template Engine</li>
+        <li>✅ Simple Controllers</li>
+        <li>✅ Queue System</li>
+        <li>✅ Event System</li>
+    </ul>
+    
+    <p style="margin-top: 2rem;">
+        <a href="/users" class="btn">View Users</a>
+        <a href="/products" class="btn btn-success">View Products</a>
+    </p>
+</div>
+
+<div class="card">
+    <h2>Quick Start</h2>
+    <p>Get started with NeoCore in 3 simple steps:</p>
+    <ol>
+        <li>Create your Entity classes in <code>app/Entities/</code></li>
+        <li>Define routes in <code>config/routes.php</code></li>
+        <li>Build controllers in <code>app/Http/Controllers/</code></li>
+    </ol>
+</div>
+{/block}

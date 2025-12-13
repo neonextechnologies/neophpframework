@@ -1,0 +1,19 @@
+{* Flash messages partial *}
+
+{if isset($success)}
+<div class="alert alert-success">
+    {$success}
+</div>
+{/if}
+
+{if isset($error)}
+<div class="alert alert-error">
+    {$error}
+</div>
+{/if}
+
+{if isset($info)}
+<div class="alert alert-info">
+    {$info}
+</div>
+{/if}

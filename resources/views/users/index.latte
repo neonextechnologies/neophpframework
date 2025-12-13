@@ -1,0 +1,43 @@
+{layout 'layouts/app.latte'}
+
+{block title}Users - NeoCore{/block}
+
+{block content}
+<div class="card">
+    <h1>Users</h1>
+    <p>Total users: {$total}</p>
+    
+    {if count($users) > 0}
+    <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
+        <thead>
+            <tr style="border-bottom: 2px solid #ddd;">
+                <th style="padding: 0.5rem; text-align: left;">ID</th>
+                <th style="padding: 0.5rem; text-align: left;">Name</th>
+                <th style="padding: 0.5rem; text-align: left;">Email</th>
+                <th style="padding: 0.5rem; text-align: left;">Status</th>
+                <th style="padding: 0.5rem; text-align: left;">Created</th>
+            </tr>
+        </thead>
+        <tbody>
+            {foreach $users as $user}
+            <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 0.5rem;">{$user->id}</td>
+                <td style="padding: 0.5rem;">{$user->name}</td>
+                <td style="padding: 0.5rem;">{$user->email}</td>
+                <td style="padding: 0.5rem;">
+                    {if $user->status === 'active'}
+                        <span style="color: green;">●</span> Active
+                    {else}
+                        <span style="color: red;">●</span> Inactive
+                    {/if}
+                </td>
+                <td style="padding: 0.5rem;">{$user->createdAt|date:'Y-m-d H:i'}</td>
+            </tr>
+            {/foreach}
+        </tbody>
+    </table>
+    {else}
+    <p style="margin-top: 1rem; color: #666;">No users found.</p>
+    {/if}
+</div>
+{/block}

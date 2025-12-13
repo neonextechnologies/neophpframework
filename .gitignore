@@ -1,0 +1,51 @@
+# NeoCore Framework
+
+# IDE files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Storage
+storage/logs/*.log
+storage/cache/*
+storage/sessions/*
+storage/queue/*
+storage/reports/*
+!storage/logs/.gitkeep
+!storage/cache/.gitkeep
+!storage/sessions/.gitkeep
+!storage/queue/.gitkeep
+!storage/migrations/.gitkeep
+
+# Environment
+.env
+.env.local
+
+# Composer (if used)
+vendor/
+composer.lock
+
+# Node (if used)
+node_modules/
+package-lock.json
+
+# Build artifacts
+*.phar
+dist/
+
+# Test coverage
+coverage/
+.phpunit.result.cache
+
+# Temporary files
+*.swp
+*.swo
+*~
+
+# Backup files
+*.backup

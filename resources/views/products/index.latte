@@ -1,0 +1,35 @@
+{layout '../layouts/app.latte'}
+
+{block title}Products - NeoCore{/block}
+
+{block content}
+<div class="card">
+    <h1>Products</h1>
+    <p>Showing {count($products)} products</p>
+    
+    {if count($products) > 0}
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
+        {foreach $products as $product}
+        <div class="card" style="margin: 0;">
+            <h3>{$product->name}</h3>
+            <p style="color: #666; font-size: 0.9rem;">{$product->category}</p>
+            <p style="margin: 0.5rem 0;">{$product->description|truncate:100}</p>
+            <p style="font-size: 1.2rem; font-weight: bold; color: #27ae60;">
+                ${$product->price|number:2}
+            </p>
+            <p style="font-size: 0.85rem; color: #666;">
+                {if $product->stock > 0}
+                    ✓ In Stock ({$product->stock} available)
+                {else}
+                    ✗ Out of Stock
+                {/if}
+            </p>
+            <a href="/products/{$product->slug}" class="btn" style="margin-top: 0.5rem; display: block; text-align: center;">View Details</a>
+        </div>
+        {/foreach}
+    </div>
+    {else}
+    <p style="margin-top: 1rem; color: #666;">No products found.</p>
+    {/if}
+</div>
+{/block}

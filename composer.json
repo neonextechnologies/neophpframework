@@ -1,0 +1,61 @@
+{
+    "name": "neocore/framework",
+    "description": "NeoCore - A lightweight, explicit, and predictable PHP framework",
+    "keywords": ["framework", "php", "neocore", "lightweight", "explicit"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=8.0",
+        "ext-pdo": "*",
+        "ext-json": "*",
+        "cycle/orm": "^2.0",
+        "cycle/database": "^2.0",
+        "cycle/annotated": "^3.0",
+        "cycle/schema-builder": "^2.0",
+        "latte/latte": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
+    },
+    "suggest": {
+        "monolog/monolog": "Advanced logging library",
+        "vlucas/phpdotenv": "Environment variable loader",
+        "guzzlehttp/guzzle": "HTTP client",
+        "respect/validation": "Validation library",
+        "ramsey/uuid": "UUID generator",
+        "nesbot/carbon": "DateTime library",
+        "phpmailer/phpmailer": "Email sending library",
+        "league/flysystem": "Filesystem abstraction",
+        "symfony/console": "Enhanced CLI components"
+    },
+    "autoload": {
+        "psr-4": {
+            "NeoCore\\System\\": "system/",
+            "App\\": "app/",
+            "Modules\\": "modules/"
+        },
+        "files": [
+            "system/Helpers/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "serve": "php neocore serve",
+        "migrate": "php neocore migrate",
+        "test": "phpunit"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}
