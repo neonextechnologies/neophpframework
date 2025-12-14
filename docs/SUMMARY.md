@@ -1,20 +1,15 @@
-# Summary
+# Table of Contents
 
 ## INTRODUCTION
 
 * [Welcome to NeoPhp Framework](introduction.md)
-* [What is NeoPhp Framework?](getting-started/what-is-neophp.md)
-* [Why NeoPhp Framework?](getting-started/why-neophp.md)
-* [Architecture Overview](getting-started/architecture.md)
-* [Features](getting-started/features.md)
+* [Installation Guide](INSTALLATION.md)
+* [Configuration](configuration.md)
+* [Directory Structure](directory-structure.md)
 
 ## GETTING STARTED
 
-* [Installation](INSTALLATION.md)
-* [Quick Start](getting-started/quick-start.md)
-* [Configuration](configuration.md)
-* [Project Structure](directory-structure.md)
-* [First Application](getting-started/first-application.md)
+* [Quick Start Guide](getting-started/quick-start.md)
 
 ## THE BASICS
 
@@ -22,21 +17,19 @@
 * [Controllers](basics/controllers.md)
 * [Requests](basics/requests.md)
 * [Responses](basics/responses.md)
+* [Views & Templates](basics/views.md)
 * [Middleware](basics/middleware.md)
 * [Validation](basics/validation.md)
 * [Forms](basics/forms.md)
-* [Views & Templates](basics/views.md)
-* [Session & Cookies](basics/session.md)
-* [Error Handling](basics/errors.md)
 
 ## DATABASE & ORM
 
 * [Getting Started](database/getting-started.md)
-* [Cycle ORM](database/orm.md)
+* [Cycle ORM Overview](database/orm.md)
 * [Models & Entities](database/models.md)
 * [Query Builder](database/query-builder.md)
 * [Migrations](database/migrations.md)
-* [Seeding](database/seeding.md)
+* [Database Seeding](database/seeding.md)
 * [Relationships](database/relationships.md)
 * [Pagination](database/pagination.md)
 
@@ -44,103 +37,67 @@
 
 * [Authentication](security/authentication.md)
 * [Authorization](security/authorization.md)
-* [RBAC - Role Based Access Control](security/rbac.md)
-* [JWT Authentication](security/jwt.md)
+* [RBAC System](security/rbac.md)
+* [Permissions](security/permissions.md)
+* [JWT Tokens](security/jwt.md)
 * [CSRF Protection](security/csrf.md)
 * [Password Hashing](security/passwords.md)
 * [Rate Limiting](security/rate-limiting.md)
-* [Permissions](security/permissions.md)
-* [Best Practices](security/best-practices.md)
+* [Security Best Practices](security/best-practices.md)
 
-## ADVANCED FEATURES
+## STORAGE & FILES
 
-### Storage & Media
 * [File Storage](advanced/storage.md)
-* [Media Processing](advanced/media.md)
-* [S3 Integration](advanced/s3.md)
-* [CDN Support](advanced/cdn.md)
+* [Soft Deletes](SOFT_DELETES.md)
 
-### Caching
+## CACHING
+
 * [Cache System](advanced/caching.md)
-* [Redis](advanced/redis.md)
-* [Memcached](advanced/memcached.md)
 
-### API Development
+## API DEVELOPMENT
+
 * [REST API](advanced/api.md)
-* [JSON Resources](advanced/resources.md)
-* [API Authentication](advanced/api-auth.md)
-* [Rate Limiting](advanced/api-rate-limit.md)
-* [Versioning](advanced/api-versioning.md)
-* [Webhooks](advanced/webhooks.md)
 
-### Background Processing
-* [Task Scheduler](SCHEDULER.md)
+## BACKGROUND PROCESSING
+
 * [Queue System](advanced/queue.md)
-* [Events](advanced/events.md)
+* [Task Scheduler](SCHEDULER.md)
+* [Events & Listeners](advanced/events.md)
 * [Broadcasting](advanced/broadcasting.md)
 
-### Content Management
+## CONTENT MANAGEMENT
+
 * [SEO Management](advanced/seo.md)
 * [CMS System](advanced/cms.md)
-* [Breadcrumbs](advanced/breadcrumbs.md)
-* [Menus](advanced/menus.md)
 
-### Internationalization
+## INTERNATIONALIZATION
+
 * [Localization](advanced/localization.md)
-* [Translation](advanced/translation.md)
-* [Date & Time](advanced/datetime.md)
 
-### Logging & Monitoring
-* [Logging](advanced/logging.md)
+## LOGGING & MONITORING
+
+* [Application Logging](advanced/logging.md)
 * [Error Tracking](advanced/error-tracking.md)
-* [Performance Monitoring](advanced/performance.md)
-* [Query Logging](advanced/query-logging.md)
 
-### Developer Tools
+## DEVELOPER UTILITIES
+
 * [Collections](advanced/collections.md)
-* [Helpers](advanced/helpers.md)
-* [Soft Deletes](SOFT_DELETES.md)
-* [Export/Import](advanced/export-import.md)
+* [Helper Functions](advanced/helpers.md)
 
 ## TESTING
 
-* [Getting Started](testing/getting-started.md)
+* [Getting Started with Testing](testing/getting-started.md)
 * [HTTP Tests](testing/http-tests.md)
 * [Database Testing](testing/database.md)
-* [Mocking](testing/mocking.md)
-* [Assertions](testing/assertions.md)
-* [Browser Testing](testing/browser.md)
-* [Coverage](testing/coverage.md)
+* [Mocking & Fakes](testing/mocking.md)
+* [Assertions Reference](testing/assertions.md)
 
-## ARCHITECTURE
-
-* [Service Container](architecture/container.md)
-* [Service Providers](architecture/providers.md)
-* [Dependency Injection](architecture/dependency-injection.md)
-* [Lifecycle](architecture/lifecycle.md)
-* [Modular Architecture](architecture/modular.md)
-
-## DEPLOYMENT
-
-* [Server Requirements](deployment/requirements.md)
-* [Optimization](deployment/optimization.md)
-* [Production Setup](deployment/production.md)
-* [Docker Deployment](deployment/docker.md)
-
-## PACKAGES & EXTENSIONS
-
-* [Creating Packages](extensions/creating-packages.md)
-* [Publishing Packages](extensions/publishing.md)
-* [Official Packages](extensions/official.md)
-
-## DEVELOPER TOOLS
+## REFERENCE
 
 * [CLI Commands](reference/cli.md)
-* [Helper Functions](reference/helpers.md)
-* [Configuration Reference](reference/config.md)
+* [Configuration](reference/config.md)
 
-## RESOURCES
+## ADDITIONAL RESOURCES
 
+* [Contributing Guidelines](../CONTRIBUTING.md)
 * [Changelog](../CHANGELOG.md)
-* [Contributing](../CONTRIBUTING.md)
-* [License](../LICENSE)
