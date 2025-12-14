@@ -16,37 +16,6 @@
 
 ---
 
-## 📊 Performance Comparison
-
-See how NeoPhp Framework compares to other popular PHP frameworks:
-
-| Feature | NeoPhp | Laravel 12 | CodeIgniter 4 |
-|---------|---------|------------|---------------|
-| **PHP Version** | 8.3+ | 8.2+ | 8.1+ |
-| **ORM Performance** | ⚡ Cycle ORM<br>2-3x faster | Eloquent<br>Baseline | Query Builder<br>1.5x faster |
-| **Template Engine** | 🎨 Latte<br>2x faster than Blade | Blade | PHP Views |
-| **Memory Usage** | 💚 Low<br>~15MB | Medium<br>~25MB | Low<br>~10MB |
-| **Request/sec** | 🚀 10,000+<br>(simple route) | 3,500 | 8,000 |
-| **Database Queries** | ⚡ Lazy Loading<br>N+1 prevention | Eager/Lazy | Manual |
-| **Built-in Auth** | ✅ JWT + Session<br>+ RBAC | ✅ Session<br>+ Passport | ❌ Manual |
-| **Real-time** | ✅ Broadcasting<br>WebSockets | ✅ Broadcasting | ❌ Manual |
-| **Queue System** | ✅ Built-in | ✅ Built-in | ❌ Manual |
-| **Caching** | ✅ Redis/Memcached<br>+ Tags | ✅ Redis/Memcached | ✅ File/Redis |
-| **API Support** | ✅ RESTful<br>+ Resources | ✅ RESTful<br>+ Resources | ✅ RESTful |
-| **Middleware** | ✅ PSR-15 | ✅ Custom | ✅ Custom |
-| **Container** | ✅ PSR-11 DI | ✅ Custom DI | ✅ Custom DI |
-| **Testing** | ✅ PHPUnit<br>+ HTTP Tests | ✅ PHPUnit<br>+ Dusk | ✅ PHPUnit |
-| **Learning Curve** | 📈 Medium | Medium | Easy |
-| **Community** | 🌱 Growing | 🌟 Large | 🌟 Large |
-
-**Benchmark Details:**
-- Tested on PHP 8.3, PostgreSQL 15, Redis 7
-- Simple route: Return JSON response with 1 DB query
-- ORM: Fetch 100 records with 1 relationship
-- Memory: Average per request (production mode)
-
----
-
 ## ✨ Features
 
 ### 🚀 **High Performance**
@@ -464,6 +433,37 @@ Complete documentation is available on GitBook:
 - [Testing](https://yoursite.gitbook.io/neophp/testing)
 
 [📚 View Full Documentation](https://yoursite.gitbook.io/neophp)
+
+---
+
+## 📊 Performance Comparison
+
+See how NeoPhp Framework compares to other popular PHP frameworks:
+
+| Feature | NeoPhp | Laravel 12 | CodeIgniter 4 |
+|---------|---------|------------|---------------|
+| **PHP Version** | 8.3+ | 8.2+ | 8.1+ |
+| **ORM Performance** | ⚡ Cycle ORM<br>2-3x faster | Eloquent<br>Baseline | Query Builder<br>1.5x faster |
+| **Template Engine** | 🎨 Latte<br>2x faster than Blade | Blade | PHP Views |
+| **Memory Usage** | 💚 Low<br>~15MB | Medium<br>~25MB | Low<br>~10MB |
+| **Request/sec** | 🚀 10,000+<br>(simple route) | 3,500 | 8,000 |
+| **Database Queries** | ⚡ Lazy Loading<br>N+1 prevention | Eager/Lazy | Manual |
+| **Built-in Auth** | ✅ JWT + Session<br>+ RBAC | ✅ Session<br>+ Passport | ❌ Manual |
+| **Real-time** | ✅ Broadcasting<br>WebSockets | ✅ Broadcasting | ❌ Manual |
+| **Queue System** | ✅ Built-in | ✅ Built-in | ❌ Manual |
+| **Caching** | ✅ Redis/Memcached<br>+ Tags | ✅ Redis/Memcached | ✅ File/Redis |
+| **API Support** | ✅ RESTful<br>+ Resources | ✅ RESTful<br>+ Resources | ✅ RESTful |
+| **Middleware** | ✅ PSR-15 | ✅ Custom | ✅ Custom |
+| **Container** | ✅ PSR-11 DI | ✅ Custom DI | ✅ Custom DI |
+| **Testing** | ✅ PHPUnit<br>+ HTTP Tests | ✅ PHPUnit<br>+ Dusk | ✅ PHPUnit |
+| **Learning Curve** | 📈 Medium | Medium | Easy |
+| **Community** | 🌱 Growing | 🌟 Large | 🌟 Large |
+
+**Benchmark Details:**
+- Tested on PHP 8.3, PostgreSQL 15, Redis 7
+- Simple route: Return JSON response with 1 DB query
+- ORM: Fetch 100 records with 1 relationship
+- Memory: Average per request (production mode)
 
 ---
 
