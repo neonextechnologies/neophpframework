@@ -1,5 +1,8 @@
 # NeoCore Framework
 
+# Documentation (GitBook only - not for distribution)
+docs/
+
 # IDE files
 .idea/
 .vscode/
