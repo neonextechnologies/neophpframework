@@ -38,6 +38,20 @@ WebSockets, GraphQL, caching (Redis/Memcached), background queues, real-time bro
 
 ---
 
+## 📦 Requirements
+
+- **PHP** 8.3 or higher
+- **Composer** 2.0+
+- **Database** MySQL 5.7+ / PostgreSQL 12+ / SQLite 3+
+- **Extensions** PDO, JSON, Mbstring, OpenSSL
+
+### Optional
+- **Redis** 6.0+ (for caching/queues)
+- **Memcached** 1.5+ (for caching)
+- **Node.js** 18+ (for asset compilation)
+
+---
+
 ## ⚡ Quick Start
 
 ```bash
@@ -277,21 +291,7 @@ class User
 
 ---
 
-## 📦 Requirements
-
-- **PHP** 8.3 or higher
-- **Composer** 2.0+
-- **Database** MySQL 5.7+ / PostgreSQL 12+ / SQLite 3+
-- **Extensions** PDO, JSON, Mbstring, OpenSSL
-
-### Optional
-- **Redis** 6.0+ (for caching/queues)
-- **Memcached** 1.5+ (for caching)
-- **Node.js** 18+ (for asset compilation)
-
----
-
-## 📁 Project Structure
+##  Project Structure
 
 ```
 neophpframework/
