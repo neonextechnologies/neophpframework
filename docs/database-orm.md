@@ -1,18 +1,18 @@
 # Cycle ORM
 
-NeoPhp Framework มาพร้อมกับ **Cycle ORM** ซึ่งเป็น DataMapper ORM ที่รวดเร็วและปลอดภัย
+NeoPhp Framework comes with **Cycle ORM**, which is a fast and secure DataMapper ORM
 
-## คุณสมบัติ
+## Features
 
-- **2-3x เร็วกว่า Eloquent** - Schema compilation + aggressive caching
-- **Type-safe** - ใช้ PHP Attributes สำหรับ entity mapping
-- **DataMapper Pattern** - แยก business logic ออกจาก database logic
-- **Lazy/Eager Loading** - ควบคุม query ได้อย่างละเอียด
+- **2-3x faster than Eloquent** - Schema compilation + aggressive caching
+- **Type-safe** - Uses PHP Attributes for entity mapping
+- **DataMapper Pattern** - Separates business logic from database logic
+- **Lazy/Eager Loading** - Fine-grained query control
 - **Repository Pattern** - Clean architecture
 
-## การกำหนดค่า
+## Configuration
 
-ไฟล์ `config/orm.php`:
+File `config/orm.php`:
 
 ```php
 return [
@@ -30,7 +30,7 @@ return [
 
 ## Entity
 
-Entity คือ PHP Class ที่แทนตารางในฐานข้อมูล ใช้ PHP Attributes สำหรับ mapping:
+Entity is a PHP Class that represents a database table. Uses PHP Attributes for mapping:
 
 ```php
 <?php
@@ -83,16 +83,16 @@ class User
 }
 ```
 
-### Annotations ที่ใช้บ่อย
+### Commonly Used Annotations
 
 | Annotation | Description | Example |
 |------------|-------------|---------|
-| `#[Entity]` | กำหนด Entity class | `#[Entity]` |
-| `#[Table]` | ชื่อตาราง | `#[Table(name: 'users')]` |
+| `#[Entity]` | Define Entity class | `#[Entity]` |
+| `#[Table]` | Table name | `#[Table(name: 'users')]` |
 | `#[Column]` | Field mapping | `#[Column(type: 'string')]` |
 | `primary` | Primary key | `#[Column(type: 'primary')]` |
-| `nullable` | ยอมรับ NULL | `#[Column(nullable: true)]` |
-| `default` | ค่า default | `#[Column(default: 'active')]` |
+| `nullable` | Accepts NULL | `#[Column(nullable: true)]` |
+| `default` | Default value | `#[Column(default: 'active')]` |
 
 ### Column Types
 
@@ -110,7 +110,7 @@ class User
 
 ## Repository
 
-Repository ใช้สำหรับ query ข้อมูล:
+Repository is used for querying data:
 
 ```php
 <?php
@@ -194,7 +194,7 @@ $users = $repository->select()
 ->where('age', 'between', [18, 30])
 ```
 
-## การใช้งานใน Controller
+## Using in Controller
 
 ```php
 <?php
@@ -224,13 +224,13 @@ class UserController extends Controller
 
     public function store(Request $request, Response $response)
     {
-        // สร้าง entity
+        // Create entity
         $user = new User();
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->setPassword($request->input('password'));
 
-        // บันทึก
+        // Save
         $entityManager = ORMService::getEntityManager();
         $entityManager->persist($user);
         $entityManager->run();
@@ -274,33 +274,33 @@ class UserController extends Controller
 ## Helper Functions
 
 ```php
-// ดึง ORM instance
+// Get ORM instance
 $orm = orm();
 
-// ดึง Repository
+// Get Repository
 $userRepo = repository(User::class);
 
-// ดึง Entity Manager
+// Get Entity Manager
 $em = entity_manager();
 ```
 
 ## CLI Commands
 
-### สร้าง Entity
+### Create Entity
 
 ```bash
 php neo make:entity Product
 ```
 
-สร้างไฟล์ `app/Entities/Product.php` พร้อม annotations
+Creates file `app/Entities/Product.php` with annotations
 
-### สร้าง Repository
+### Create Repository
 
 ```bash
 php neo make:repository ProductRepository
 ```
 
-สร้างไฟล์ `app/Repositories/ProductRepository.php`
+Creates file `app/Repositories/ProductRepository.php`
 
 ### Sync Schema
 
@@ -308,7 +308,7 @@ php neo make:repository ProductRepository
 php neo orm:sync
 ```
 
-สร้าง/อัปเดตตารางในฐานข้อมูลตาม Entity definitions
+Create/update database tables based on Entity definitions
 
 **Options:**
 - `--run` - Execute schema changes (default: dry run)
@@ -319,7 +319,7 @@ php neo orm:sync
 php neo cache:clear
 ```
 
-ล้าง ORM schema cache
+Clear ORM schema cache
 
 ## Relationships
 
@@ -400,20 +400,20 @@ try {
 
 ## Best Practices
 
-1. **ใช้ Repository Pattern** - อย่า query ตรงจาก Entity
-2. **Eager Loading** - ระวัง N+1 query problem
-3. **Type Hints** - ใช้ type hints ทุก property
-4. **Immutable Dates** - ใช้ `DateTimeImmutable` แทน `DateTime`
-5. **Cache Schema** - Enable cache ใน production
+1. **Use Repository Pattern** - Don't query directly from Entity
+2. **Eager Loading** - Watch out for N+1 query problem
+3. **Type Hints** - Use type hints on all properties
+4. **Immutable Dates** - Use `DateTimeImmutable` instead of `DateTime`
+5. **Cache Schema** - Enable cache in production
 
 ## Performance Tips
 
-- Schema compilation ทำครั้งเดียว แล้ว cache
-- ใช้ `select()->load()` สำหรับ eager loading
-- ใช้ `persist()` หลายตัวก่อน `run()` เพื่อ batch insert
-- Enable query logging เฉพาะ development
+- Schema compilation done once, then cached
+- Use `select()->load()` for eager loading
+- Use multiple `persist()` calls before `run()` for batch insert
+- Enable query logging only in development
 
-## เปรียบเทียบกับ Eloquent
+## Comparison with Eloquent
 
 | Feature | Cycle ORM | Eloquent |
 |---------|-----------|----------|

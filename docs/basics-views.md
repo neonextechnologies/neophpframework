@@ -1,18 +1,18 @@
 # Latte Template Engine
 
-NeoPhp Framework ใช้ **Latte Template Engine** สำหรับการสร้าง UI ซึ่งมี syntax คล้าย Blade แต่เร็วกว่า 2 เท่า
+NeoPhp Framework uses **Latte Template Engine** for creating UI, which has a syntax similar to Blade but is 2x faster
 
-## คุณสมบัติ
+## Features
 
-- **2x เร็วกว่า Blade** - Compiled templates + aggressive caching
-- **Auto-escaping** - ป้องกัน XSS โดยอัตโนมัติ
-- **Blade-like Syntax** - เรียนรู้ง่ายถ้าเคยใช้ Laravel
+- **2x faster than Blade** - Compiled templates + aggressive caching
+- **Auto-escaping** - Prevents XSS automatically
+- **Blade-like Syntax** - Easy to learn if you've used Laravel
 - **Template Inheritance** - Layouts, blocks, includes
 - **Custom Filters** - Extend functionality
 
-## การกำหนดค่า
+## Configuration
 
-ไฟล์ `config/view.php`:
+File `config/view.php`:
 
 ```php
 return [
@@ -42,7 +42,7 @@ resources/views/
     └── index.latte        # Product list
 ```
 
-## การใช้งานใน Controller
+## Using in Controller
 
 ```php
 <?php
@@ -66,10 +66,10 @@ class HomeController extends Controller
 ### Helper Function
 
 ```php
-// แบบสั้น
+// Short form
 return view($response, 'home', ['title' => 'Welcome']);
 
-// ตรวจสอบว่ามี template หรือไม่
+// Check if template exists
 if ($this->viewExists('users/index')) {
     // ...
 }
@@ -89,7 +89,7 @@ if ($this->viewExists('users/index')) {
 {* Auto-escaped *}
 {$htmlContent}
 
-{* Raw HTML (ระวัง XSS!) *}
+{* Raw HTML (beware of XSS!) *}
 {$htmlContent|noescape}
 ```
 
@@ -256,7 +256,7 @@ if ($this->viewExists('users/index')) {
 
 ## Filters
 
-Filters ใช้สำหรับแปลงค่าข้อมูล:
+Filters are used to transform data values:
 
 ### Built-in Filters
 
@@ -480,25 +480,25 @@ Filters ใช้สำหรับแปลงค่าข้อมูล:
 php neo view:clear
 ```
 
-ล้าง compiled templates ใน `storage/cache/views/`
+Clears compiled templates in `storage/cache/views/`
 
-## การเพิ่ม Custom Filters
+## Adding Custom Filters
 
-แก้ไขไฟล์ `system/Core/ViewService.php`:
+Edit file `system/Core/ViewService.php`:
 
 ```php
 private function addCustomFilters(): void
 {
     $latte = $this->getEngine();
     
-    // เพิ่ม filter ใหม่
+    // Add new filter
     $latte->addFilter('myfilter', function ($value) {
         return strtoupper($value);
     });
 }
 ```
 
-ใช้งาน:
+Usage:
 
 ```latte
 {$text|myfilter}
@@ -506,20 +506,20 @@ private function addCustomFilters(): void
 
 ## Best Practices
 
-1. **ใช้ Layouts** - อย่า copy-paste HTML ซ้ำ
-2. **Escape Output** - ใช้ `|noescape` เฉพาะเมื่อจำเป็น
-3. **Partials** - แยก components เล็กๆ ออกเป็น partial
-4. **Cache** - Enable cache ใน production
-5. **Type Hints** - ส่งข้อมูลที่มี type ชัดเจนจาก controller
+1. **Use Layouts** - Don't copy-paste HTML repeatedly
+2. **Escape Output** - Use `|noescape` only when necessary
+3. **Partials** - Separate small components into partials
+4. **Cache** - Enable cache in production
+5. **Type Hints** - Pass data with clear types from controller
 
 ## Performance Tips
 
-- Templates compile ครั้งเดียว แล้ว cache
-- ปิด `auto_refresh` ใน production
-- ใช้ `{block}` แทน `{include}` เมื่อทำได้
-- ระวัง nested loops (N+1 problem)
+- Templates compile once, then cached
+- Disable `auto_refresh` in production
+- Use `{block}` instead of `{include}` when possible
+- Watch out for nested loops (N+1 problem)
 
-## เปรียบเทียบกับ Blade
+## Comparison with Blade
 
 | Feature | Latte | Blade |
 |---------|-------|-------|
@@ -538,7 +538,7 @@ private function addCustomFilters(): void
 
 ### Template Not Found
 
-ตรวจสอบ path ใน `config/view.php`:
+Check path in `config/view.php`:
 
 ```php
 'path' => __DIR__ . '/../resources/views',
@@ -546,13 +546,13 @@ private function addCustomFilters(): void
 
 ### Cache Issues
 
-ลบ cache:
+Clear cache:
 
 ```bash
 php neo view:clear
 ```
 
-หรือ:
+Or:
 
 ```bash
 rm -rf storage/cache/views/*
@@ -560,6 +560,6 @@ rm -rf storage/cache/views/*
 
 ### Syntax Errors
 
-- ใช้ `{*` comment `*}` แทน `<!--` HTML comment ในตรรกะ
-- ปิด tags ให้ครบ: `{if}...{/if}`
-- ตรวจสอบชื่อ variables: `{$variable}` ไม่ใช่ `{variable}`
+- Use `{*` comment `*}` instead of `<!--` HTML comment in logic
+- Close all tags properly: `{if}...{/if}`
+- Check variable names: `{$variable}` not `{variable}`

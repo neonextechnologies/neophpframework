@@ -1,12 +1,12 @@
 # Quick Start
 
-เริ่มต้นใช้งาน NeoPhp Framework ได้ใน 5 นาที
+Get started with NeoPhp Framework in 5 minutes
 
-## ติดตั้ง
+## Installation
 
 ### Requirements
 
-- PHP 8.0 หรือสูงกว่า
+- PHP 8.0 or higher
 - Composer
 - Extensions: `pdo`, `json`, `mbstring`
 
@@ -27,7 +27,7 @@ composer install
 
 ### Database
 
-แก้ไขไฟล์ `config/database.php`:
+Edit `config/database.php`:
 
 ```php
 return [
@@ -43,13 +43,13 @@ return [
 
 ### Environment
 
-คัดลอก `.env.example` เป็น `.env`:
+Copy `.env.example` to `.env`:
 
 ```bash
 cp .env.example .env
 ```
 
-แก้ไข `.env`:
+Edit `.env`:
 
 ```env
 APP_ENV=development
@@ -65,7 +65,7 @@ DB_PASSWORD=
 
 ## Sync Database Schema
 
-สร้างตารางจาก Entities:
+Create tables from Entities:
 
 ```bash
 php neo orm:sync --run
@@ -77,15 +77,15 @@ php neo orm:sync --run
 php -S localhost:8000 -t public/
 ```
 
-เปิดเบราว์เซอร์: http://localhost:8000
+Open browser: http://localhost:8000
 
-## สร้าง Entity
+## Create Entity
 
 ```bash
 php neo make:entity Post
 ```
 
-แก้ไข `app/Entities/Post.php`:
+Edit `app/Entities/Post.php`:
 
 ```php
 <?php
@@ -119,13 +119,13 @@ class Post
 }
 ```
 
-## สร้าง Repository
+## Create Repository
 
 ```bash
 php neo make:repository PostRepository
 ```
 
-แก้ไข `app/Repositories/PostRepository.php`:
+Edit `app/Repositories/PostRepository.php`:
 
 ```php
 <?php
@@ -146,7 +146,7 @@ class PostRepository extends BaseRepository
 }
 ```
 
-อัปเดต `config/orm.php`:
+Update `config/orm.php`:
 
 ```php
 'repositories' => [
@@ -156,9 +156,9 @@ class PostRepository extends BaseRepository
 ],
 ```
 
-## สร้าง Controller
+## Create Controller
 
-สร้างไฟล์ `app/Http/Controllers/PostController.php`:
+Create file `app/Http/Controllers/PostController.php`:
 
 ```php
 <?php
@@ -219,9 +219,9 @@ class PostController extends Controller
 }
 ```
 
-## สร้าง View
+## Create View
 
-สร้างไฟล์ `resources/views/posts/index.latte`:
+Create file `resources/views/posts/index.latte`:
 
 ```latte
 {extends 'layouts/app.latte'}
@@ -245,9 +245,9 @@ class PostController extends Controller
 {/block}
 ```
 
-## เพิ่ม Routes
+## Add Routes
 
-แก้ไข `config/routes.php`:
+Edit `config/routes.php`:
 
 ```php
 return function($router) {
@@ -265,23 +265,23 @@ return function($router) {
 php neo orm:sync --run
 ```
 
-## ทดสอบ
+## Test
 
-เปิดเบราว์เซอร์: http://localhost:8000/posts
+Open browser: http://localhost:8000/posts
 
 ## CLI Commands
 
 ```bash
-# สร้าง Entity
+# Create Entity
 php neo make:entity EntityName
 
-# สร้าง Repository
+# Create Repository
 php neo make:repository RepositoryName
 
-# สร้าง Controller
+# Create Controller
 php neo make:controller ControllerName
 
-# สร้าง Middleware
+# Create Middleware
 php neo make:middleware MiddlewareName
 
 # Sync ORM Schema
@@ -307,18 +307,18 @@ php neo queue:work
 php neo --help
 ```
 
-## ขั้นตอนถัดไป
+## Next Steps
 
-- [Routing](routing.md) - เรียนรู้การสร้าง routes
-- [Controllers](controllers.md) - เรียนรู้การสร้าง controllers
-- [ORM](../database/orm.md) - เจาะลึก Cycle ORM
-- [Views](views.md) - เรียนรู้ Latte Templates
-- [Validation](validation.md) - ตรวจสอบข้อมูล
+- [Routing](routing.md) - Learn routing
+- [Controllers](controllers.md) - Learn controllers
+- [ORM](../database/orm.md) - Deep dive into Cycle ORM
+- [Views](views.md) - Learn Latte Templates
+- [Validation](validation.md) - Data validation
 - [Middleware](middleware.md) - HTTP middleware
 - [Events](../advanced/events.md) - Event system
 - [Queue](../advanced/queue.md) - Background jobs
 
-## ตัวอย่าง Project Structure
+## Example Project Structure
 
 ```
 NeoPhp/
@@ -367,25 +367,25 @@ NeoPhp/
 
 ## Best Practices
 
-1. **Entities** - ใช้ Type Hints ทุก property
-2. **Repositories** - เก็บ query logic ใน Repository
-3. **Controllers** - Keep it thin, ย้าย business logic ไป Service
-4. **Views** - ใช้ Layouts และ Partials
-5. **Validation** - Validate ทุก user input
-6. **Security** - ใช้ prepared statements (ORM ทำให้แล้ว)
-7. **Cache** - Enable cache ใน production
+1. **Entities** - Use Type Hints for all properties
+2. **Repositories** - Keep query logic in Repository
+3. **Controllers** - Keep it thin, move business logic to Service
+4. **Views** - Use Layouts and Partials
+5. **Validation** - Validate all user input
+6. **Security** - Use prepared statements (ORM handles this)
+7. **Cache** - Enable cache in production
 
 ## Tips
 
-- ใช้ `php neo --help` เพื่อดู commands ทั้งหมด
-- เปิด debug mode ตอน development: `APP_DEBUG=true`
-- Sync schema หลังแก้ Entity: `php neo orm:sync --run`
-- Clear cache หลังแก้ config: `php neo cache:clear`
-- ใช้ Repository แทนการ query ตรงจาก Entity
+- Use `php neo --help` to see all commands
+- Enable debug mode during development: `APP_DEBUG=true`
+- Sync schema after modifying Entity: `php neo orm:sync --run`
+- Clear cache after modifying config: `php neo cache:clear`
+- Use Repository instead of querying Entity directly
 
 ## Troubleshooting
 
-### Port 8000 ถูกใช้แล้ว
+### Port 8000 already in use
 
 ```bash
 php -S localhost:8080 -t public/
@@ -393,7 +393,7 @@ php -S localhost:8080 -t public/
 
 ### Database Connection Error
 
-ตรวจสอบ `config/database.php` และสิทธิ์ MySQL
+Check `config/database.php` and MySQL permissions
 
 ### Class Not Found
 
@@ -403,7 +403,7 @@ composer dump-autoload
 
 ### Template Not Found
 
-ตรวจสอบ path ใน `config/view.php`
+Check path in `config/view.php`
 
 ### Permission Denied
 
