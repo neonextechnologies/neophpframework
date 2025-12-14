@@ -282,10 +282,10 @@ $router->middleware(['throttle:api'])->group(function($router) {
 
 ```bash
 # Cache routes for production
-php NeoPhp route:cache
+php neo route:cache
 
 # Clear route cache
-php NeoPhp route:clear
+php neo route:clear
 ```
 
 ## Advanced Usage

@@ -380,8 +380,8 @@ app/Http/Controllers/
 For large, isolated features, create modules:
 
 ```bash
-php NeoPhp make:module Billing
-php NeoPhp make:module Reporting
+php neo make:module Billing
+php neo make:module Reporting
 ```
 
 ## Next Steps

@@ -313,10 +313,10 @@ For production, you can cache configuration (feature coming soon):
 
 ```bash
 # Cache configuration
-php NeoPhp config:cache
+php neo config:cache
 
 # Clear configuration cache
-php NeoPhp config:clear
+php neo config:clear
 ```
 
 ## Best Practices

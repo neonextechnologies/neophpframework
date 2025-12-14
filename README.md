@@ -106,13 +106,13 @@ DB_USERNAME=root
 DB_PASSWORD=
 
 # Generate application key
-php NeoPhp key:generate
+php neo key:generate
 
 # Run migrations
-php NeoPhp migrate
+php neo migrate
 
 # Start development server
-php NeoPhp serve
+php neo serve
 ```
 
 Visit `http://localhost:8000` 🚀
@@ -121,62 +121,87 @@ For detailed installation instructions, see [Installation Guide](docs/INSTALLATI
 
 ## 📝 CLI Commands
 
+### Quick Setup (Optional)
+
+**Windows:** Add project directory to PATH, then use `neo` directly:
+```cmd
+neo make:controller UserController
+neo serve
+```
+
+**Linux/Mac:** Create symlink or add to PATH:
+```bash
+sudo ln -s /path/to/project/neo /usr/local/bin/neo
+# Or add to ~/.bashrc: export PATH="/path/to/project:$PATH"
+
+neo make:controller UserController
+neo serve
+```
+
+**Without PATH setup:** Use `php neo` instead:
+```bash
+php neo make:controller UserController
+php neo serve
+```
+
+### Available Commands
+
 The NeoPhp CLI provides powerful commands for development:
 
 ### Generators
 ```bash
-php NeoPhp make:controller UserController    # Create controller
-php NeoPhp make:model User                   # Create model
-php NeoPhp make:migration create_users_table # Create migration
-php NeoPhp make:middleware AuthMiddleware    # Create middleware
-php NeoPhp make:service UserService          # Create service
-php NeoPhp make:seeder UserSeeder           # Create seeder
-php NeoPhp make:factory UserFactory         # Create factory
-php NeoPhp make:command SendEmails          # Create CLI command
+neo make:controller UserController    # Create controller
+neo make:model User                   # Create model
+neo make:migration create_users_table # Create migration
+neo make:middleware AuthMiddleware    # Create middleware
+neo make:service UserService          # Create service
+neo make:seeder UserSeeder           # Create seeder
+neo make:factory UserFactory         # Create factory
+neo make:command SendEmails          # Create CLI command
 ```
 
 ### Database
 ```bash
-php NeoPhp migrate                  # Run migrations
-php NeoPhp migrate:rollback         # Rollback last migration
-php NeoPhp migrate:reset            # Reset all migrations
-php NeoPhp migrate:refresh          # Reset and re-run migrations
-php NeoPhp migrate:status           # Show migration status
-php NeoPhp db:seed                  # Run database seeders
+neo migrate                  # Run migrations
+neo migrate:rollback         # Rollback last migration
+neo migrate:reset            # Reset all migrations
+neo migrate:refresh          # Reset and re-run migrations
+neo migrate:status           # Show migration status
+neo db:seed                  # Run database seeders
 ```
 
 ### Cache & Optimization
 ```bash
-php NeoPhp cache:clear              # Clear application cache
-php NeoPhp view:clear               # Clear compiled views
-php NeoPhp config:clear             # Clear config cache
-php NeoPhp route:clear              # Clear route cache
-php NeoPhp optimize                 # Optimize for production
+neo cache:clear              # Clear application cache
+neo view:clear               # Clear compiled views
+neo config:clear             # Clear config cache
+neo route:clear              # Clear route cache
+neo optimize                 # Optimize for production
 ```
 
 ### Queue & Scheduler
 ```bash
-php NeoPhp queue:work               # Start queue worker
-php NeoPhp queue:listen             # Listen to queue
-php NeoPhp queue:restart            # Restart queue workers
-php NeoPhp schedule:run             # Run scheduled tasks
-php NeoPhp schedule:list            # List scheduled tasks
+neo queue:work               # Start queue worker
+neo queue:listen             # Listen to queue
+neo queue:restart            # Restart queue workers
+neo schedule:run             # Run scheduled tasks
+neo schedule:list            # List scheduled tasks
 ```
 
 ### Development
 ```bash
-php NeoPhp serve                    # Start dev server (localhost:8000)
-php NeoPhp serve --port=3000        # Custom port
-php NeoPhp tinker                   # Interactive console
-php NeoPhp key:generate             # Generate APP_KEY
-php NeoPhp storage:link             # Create storage symlink
+neo serve                    # Start dev server (localhost:8000)
+neo serve --port=3000        # Custom port
+neo tinker                   # Interactive console
+neo key:generate             # Generate APP_KEY
+neo storage:link             # Create storage symlink
 ```
 
 ### Testing
 ```bash
-php NeoPhp test                     # Run tests
-php NeoPhp test --filter=UserTest   # Run specific test
-php NeoPhp test --coverage          # Run with coverage
+neo test                     # Run tests
+neo test --filter=UserTest   # Run specific test
+neo test --coverage          # Run with coverage
 ```
 
 ## 🚀 Quick Start
@@ -185,10 +210,10 @@ php NeoPhp test --coverage          # Run with coverage
 
 ```bash
 # Create a controller
-php NeoPhp make:controller Api/UserController
+neo make:controller Api/UserController
 
 # Create a model
-php NeoPhp make:model User
+neo make:model User
 ```
 
 **Define routes** in `routes/api.php`:
@@ -731,9 +756,9 @@ class Kernel
 }
 ```
 
-Run scheduler: `php NeoPhp schedule:run`
+Run scheduler: `php neo schedule:run`
 
-Add to crontab: `* * * * * cd /path-to-project && php NeoPhp schedule:run >> /dev/null 2>&1`
+Add to crontab: `* * * * * cd /path-to-project && php neo schedule:run >> /dev/null 2>&1`
 
 ### 📡 Queue System
 
@@ -762,7 +787,7 @@ class SendEmailJob
 }
 ```
 
-Run worker: `php NeoPhp queue:work`
+Run worker: `php neo queue:work`
 
 ### 📊 Logging
 
@@ -920,7 +945,7 @@ class UserApiTest extends TestCase
 }
 ```
 
-Run tests: `php NeoPhp test`
+Run tests: `php neo test`
 
 ## 📦 Deployment
 
@@ -931,13 +956,13 @@ Run tests: `php NeoPhp test`
 composer install --optimize-autoloader --no-dev
 
 # Cache configuration
-php NeoPhp config:cache
+php neo config:cache
 
 # Cache routes
-php NeoPhp route:cache
+php neo route:cache
 
 # Optimize application
-php NeoPhp optimize
+php neo optimize
 
 # Set permissions
 chmod -R 755 storage

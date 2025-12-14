@@ -1,0 +1,41 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * Neo CLI Tool
+ * 
+ * Usage: php neo [command] [arguments]
+ * 
+ * Available commands:
+ *   make:module         Create a new module
+ *   make:controller     Create a new controller
+ *   make:model          Create a new model
+ *   make:service        Create a new service
+ *   make:migration      Create a new migration
+ *   migrate             Run migrations
+ *   migrate:rollback    Rollback last migration
+ *   worker:run          Start queue worker
+ *   serve               Start development server
+ *   list                List all available commands
+ */
+
+// Define base path
+define('BASE_PATH', __DIR__);
+define('STORAGE_PATH', BASE_PATH . '/storage');
+
+// Load autoloader
+require_once BASE_PATH . '/system/Core/Autoloader.php';
+
+use NeoCore\System\Core\Autoloader;
+use NeoCore\System\CLI\Console;
+
+// Register autoloader
+$autoloader = new Autoloader(BASE_PATH);
+$autoloader->register();
+
+// Load helpers
+require_once BASE_PATH . '/system/Helpers/helpers.php';
+
+// Run CLI
+$console = new Console(BASE_PATH);
+$console->run($argv);

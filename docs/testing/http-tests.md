@@ -610,19 +610,19 @@ class UserApiTest extends TestCase
 
 ```bash
 # Run all tests
-php NeoPhp test
+php neo test
 
 # Run specific test file
-php NeoPhp test tests/Feature/UserApiTest.php
+php neo test tests/Feature/UserApiTest.php
 
 # Run specific test method
-php NeoPhp test --filter testCanCreateUser
+php neo test --filter testCanCreateUser
 
 # Run with coverage
-php NeoPhp test --coverage
+php neo test --coverage
 
 # Run in parallel
-php NeoPhp test --parallel
+php neo test --parallel
 ```
 
 ## Best Practices

@@ -508,16 +508,16 @@ class UserTest extends TestCase
 
 ```bash
 # Clear all cache
-php NeoPhp cache:clear
+php neo cache:clear
 
 # Clear specific store
-php NeoPhp cache:clear --store=redis
+php neo cache:clear --store=redis
 
 # Clear tagged cache
-php NeoPhp cache:clear --tags=users,posts
+php neo cache:clear --tags=users,posts
 
 # Show cache statistics
-php NeoPhp cache:stats
+php neo cache:stats
 ```
 
 ## See Also

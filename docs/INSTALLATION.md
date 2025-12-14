@@ -25,7 +25,7 @@ cp .env.example .env
 nano .env
 
 # Start development server
-php NeoPhp serve
+php neo serve
 ```
 
 ### Method 2: Composer Create-Project (Coming Soon)
@@ -33,7 +33,7 @@ php NeoPhp serve
 ```bash
 composer create-project NeoPhp/framework myproject
 cd myproject
-php NeoPhp serve
+php neo serve
 ```
 
 ### Method 3: Download ZIP
@@ -87,7 +87,7 @@ CREATE DATABASE NeoPhp CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 3. Run migrations:
 
 ```bash
-php NeoPhp migrate
+php neo migrate
 ```
 
 ## Web Server Configuration
@@ -161,10 +161,10 @@ server {
 For development, use PHP's built-in server:
 
 ```bash
-php NeoPhp serve
+php neo serve
 
 # Custom host and port
-php NeoPhp serve 0.0.0.0 8080
+php neo serve 0.0.0.0 8080
 ```
 
 Visit `http://localhost:8000`
@@ -187,13 +187,13 @@ Test your installation:
 
 ```bash
 # List available commands
-php NeoPhp list
+php neo list
 
 # Check PHP version
 php -v
 
 # Test database connection
-php NeoPhp migrate
+php neo migrate
 ```
 
 Visit your application in a browser. You should see:
