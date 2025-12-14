@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Email - NeoCore</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .verify-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            text-align: center;
+        }
+        .verify-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+        }
+        .verify-header h1 { color: #333; font-size: 28px; margin-bottom: 15px; }
+        .verify-header p { color: #666; font-size: 16px; line-height: 1.6; margin-bottom: 30px; }
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 12px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .btn:hover { transform: translateY(-2px); }
+        .links { margin-top: 20px; }
+        .links a { color: #667eea; text-decoration: none; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="verify-container">
+        <div class="verify-icon">📧</div>
+        
+        <div class="verify-header">
+            <h1>Verify Your Email</h1>
+            <p>
+                Thanks for signing up! Before getting started, could you verify your 
+                email address by clicking on the link we just emailed to you?
+            </p>
+            <p>
+                If you didn't receive the email, we will gladly send you another.
+            </p>
+        </div>
+
+        {if $status}
+        <div class="success-message">{$status}</div>
+        {/if}
+
+        <form method="POST" action="/email/verification-notification">
+            <button type="submit" class="btn">Resend Verification Email</button>
+        </form>
+
+        <div class="links">
+            <a href="/logout">Log Out</a>
+        </div>
+    </div>
+</body>
+</html>
