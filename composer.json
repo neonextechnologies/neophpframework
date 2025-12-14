@@ -30,12 +30,23 @@
     },
     "autoload": {
         "psr-4": {
+            "NeoCore\\": "neocore/src/",
             "NeoCore\\System\\": "system/",
             "App\\": "app/",
             "Modules\\": "modules/"
         },
         "files": [
-            "system/Helpers/helpers.php"
+            "system/Helpers/helpers.php",
+            "neocore/src/helpers/auth_helpers.php",
+            "neocore/src/helpers/hash_helpers.php",
+            "neocore/src/helpers/storage_helpers.php",
+            "neocore/src/helpers/cache_helpers.php",
+            "neocore/src/helpers/api_helpers.php",
+            "neocore/src/helpers/log_helpers.php",
+            "neocore/src/helpers/collection_helpers.php",
+            "neocore/src/helpers/url_helpers.php",
+            "neocore/src/helpers/misc_helpers.php",
+            "neocore/src/helpers/http_helpers.php"
         ]
     },
     "autoload-dev": {
