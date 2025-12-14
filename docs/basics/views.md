@@ -4,11 +4,11 @@ NeoPhp Framework ใช้ **Latte Template Engine** สำหรับการ
 
 ## คุณสมบัติ
 
-- ⚡ **2x เร็วกว่า Blade** - Compiled templates + aggressive caching
-- 🔒 **Auto-escaping** - ป้องกัน XSS โดยอัตโนมัติ
-- 🎨 **Blade-like Syntax** - เรียนรู้ง่ายถ้าเคยใช้ Laravel
-- 🧩 **Template Inheritance** - Layouts, blocks, includes
-- 🔧 **Custom Filters** - Extend functionality
+- **2x เร็วกว่า Blade** - Compiled templates + aggressive caching
+- **Auto-escaping** - ป้องกัน XSS โดยอัตโนมัติ
+- **Blade-like Syntax** - เรียนรู้ง่ายถ้าเคยใช้ Laravel
+- **Template Inheritance** - Layouts, blocks, includes
+- **Custom Filters** - Extend functionality
 
 ## การกำหนดค่า
 

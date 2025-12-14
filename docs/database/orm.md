@@ -4,11 +4,11 @@ NeoPhp Framework มาพร้อมกับ **Cycle ORM** ซึ่งเป
 
 ## คุณสมบัติ
 
-- 🚀 **2-3x เร็วกว่า Eloquent** - Schema compilation + aggressive caching
-- 🔒 **Type-safe** - ใช้ PHP Attributes สำหรับ entity mapping
-- 📊 **DataMapper Pattern** - แยก business logic ออกจาก database logic
-- 🔄 **Lazy/Eager Loading** - ควบคุม query ได้อย่างละเอียด
-- 🎯 **Repository Pattern** - Clean architecture
+- **2-3x เร็วกว่า Eloquent** - Schema compilation + aggressive caching
+- **Type-safe** - ใช้ PHP Attributes สำหรับ entity mapping
+- **DataMapper Pattern** - แยก business logic ออกจาก database logic
+- **Lazy/Eager Loading** - ควบคุม query ได้อย่างละเอียด
+- **Repository Pattern** - Clean architecture
 
 ## การกำหนดค่า
 

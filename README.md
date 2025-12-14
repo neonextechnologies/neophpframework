@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 NeoPhp Framework
+# NeoPhp Framework
 
 [![PHP Version](https://img.shields.io/badge/php-%3E%3D8.3-blue.svg)](https://php.net)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
@@ -16,38 +16,38 @@
 
 ---
 
-## ✨ Features
+## Features
 
 ### Core Features
-- 🔐 **Authentication & Authorization** - JWT, Session, RBAC, Permissions
-- 💾 **Database** - Cycle ORM, PostgreSQL, MySQL, SQLite support
-- 🎨 **Template Engine** - Latte (Blade-like syntax, 2x faster)
-- 🛣️ **Routing** - RESTful, Resource routes, Route groups
-- 🔒 **Security** - CSRF, XSS protection, Password hashing, Rate limiting
+- **Authentication & Authorization** - JWT, Session, RBAC, Permissions
+- **Database** - Cycle ORM, PostgreSQL, MySQL, SQLite support
+- **Template Engine** - Latte (Blade-like syntax, 2x faster)
+- **Routing** - RESTful, Resource routes, Route groups
+- **Security** - CSRF, XSS protection, Password hashing, Rate limiting
 
 ### Advanced Features
-- 📦 **Storage & Media** - Local, S3, Image processing, CDN support
-- 🚀 **Caching** - Redis, Memcached, File, Array drivers
-- 📡 **API** - RESTful API, JSON responses, API authentication
-- 📊 **Logging & Monitoring** - PSR-3, Multiple channels, Error tracking
-- 🌍 **Localization** - Multi-language, Translation management
-- ⏰ **Task Scheduler** - Cron-like scheduling, Background jobs
-- 🔍 **SEO** - Meta tags, Sitemaps, Open Graph, Schema.org
-- 📝 **CMS** - Page management, Content blocks, Menus
-- 📢 **Broadcasting** - Pusher, Redis pub/sub, WebSockets
-- 🧪 **Testing** - HTTP testing, Database testing, Mocking
+- **Storage & Media** - Local, S3, Image processing, CDN support
+- **Caching** - Redis, Memcached, File, Array drivers
+- **API** - RESTful API, JSON responses, API authentication
+- **Logging & Monitoring** - PSR-3, Multiple channels, Error tracking
+- **Localization** - Multi-language, Translation management
+- **Task Scheduler** - Cron-like scheduling, Background jobs
+- **SEO** - Meta tags, Sitemaps, Open Graph, Schema.org
+- **CMS** - Page management, Content blocks, Menus
+- **Broadcasting** - Pusher, Redis pub/sub, WebSockets
+- **Testing** - HTTP testing, Database testing, Mocking
 
-## 🎯 Why NeoPhp Framework?
+## Why NeoPhp Framework?
 
-- **⚡ Performance First**: Built with Cycle ORM (2-3x faster than Eloquent)
-- **🎨 Modern PHP**: PHP 8.3+, typed properties, enums, attributes
-- **📦 Feature Complete**: Everything you need out of the box
-- **🧩 Modular Monolith**: Well-organized modules, easy to scale
-- **🔧 Developer Friendly**: Intuitive APIs, comprehensive documentation
-- **🏗️ Clean Architecture**: Service-oriented, SOLID principles
-- **🌐 Production Ready**: Battle-tested components, security first
+- **Performance First**: Built with Cycle ORM (2-3x faster than Eloquent)
+- **Modern PHP**: PHP 8.3+, typed properties, enums, attributes
+- **Feature Complete**: Everything you need out of the box
+- **Modular Monolith**: Well-organized modules, easy to scale
+- **Developer Friendly**: Intuitive APIs, comprehensive documentation
+- **Clean Architecture**: Service-oriented, SOLID principles
+- **Production Ready**: Battle-tested components, security first
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 neophpframework/
@@ -75,7 +75,7 @@ neophpframework/
 └── tests/                 # Test suite
 ```
 
-## 📦 Installation
+## Installation
 
 ### Requirements
 - PHP 8.3 or higher
@@ -115,11 +115,9 @@ php neo migrate
 php neo serve
 ```
 
-Visit `http://localhost:8000` 🚀
+Visit `http://localhost:8000` For detailed installation instructions, see [Installation Guide](docs/INSTALLATION.md).
 
-For detailed installation instructions, see [Installation Guide](docs/INSTALLATION.md).
-
-## 📝 CLI Commands
+## CLI Commands
 
 ### Quick Setup (Optional)
 
@@ -204,7 +202,7 @@ neo test --filter=UserTest   # Run specific test
 neo test --coverage          # Run with coverage
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Create Your First API Endpoint
 
@@ -271,46 +269,44 @@ class UserController extends Controller
 }
 ```
 
-Visit `http://localhost:8000/api/users` 🎉
-
-## 📚 Documentation
+Visit `http://localhost:8000/api/users` ## � Documentation
 
 ### Getting Started
-- 📖 [Installation Guide](docs/INSTALLATION.md)
-- 🚀 [Quick Start Guide](docs/getting-started/quick-start.md)
-- 🏗️ [Directory Structure](docs/directory-structure.md)
-- ⚙️ [Configuration](docs/configuration.md)
+- [Installation Guide](docs/INSTALLATION.md)
+- [Quick Start Guide](docs/getting-started/quick-start.md)
+- [Directory Structure](docs/directory-structure.md)
+- [Configuration](docs/configuration.md)
 
 ### Core Concepts
-- 🛣️ [Routing](docs/basics/routing.md)
-- 🎮 [Controllers](docs/basics/controllers.md)
-- 💾 [Database & ORM](docs/database/orm.md)
-- 🎨 [Views & Templates](docs/basics/views.md)
-- 🔐 [Authentication](docs/security/authentication.md)
-- 🔑 [Authorization](docs/security/authorization.md)
+- [Routing](docs/basics/routing.md)
+- [Controllers](docs/basics/controllers.md)
+- [Database & ORM](docs/database/orm.md)
+- [Views & Templates](docs/basics/views.md)
+- [Authentication](docs/security/authentication.md)
+- [Authorization](docs/security/authorization.md)
 
 ### Advanced Topics
-- 📦 [Storage & Media](docs/advanced/storage.md)
-- 🚀 [Caching](docs/advanced/caching.md)
-- 📡 [REST API](docs/advanced/api.md)
-- 📊 [Logging](docs/advanced/logging.md)
-- 🌍 [Localization](docs/advanced/localization.md)
-- ⏰ [Task Scheduler](docs/SCHEDULER.md)
-- 🗑️ [Soft Deletes](docs/SOFT_DELETES.md)
-- 🔍 [SEO Management](docs/advanced/seo.md)
-- 📝 [CMS System](docs/advanced/cms.md)
-- 📢 [Broadcasting](docs/advanced/broadcasting.md)
-- 🧪 [Testing](docs/testing/getting-started.md)
+- [Storage & Media](docs/advanced/storage.md)
+- [Caching](docs/advanced/caching.md)
+- [REST API](docs/advanced/api.md)
+- [Logging](docs/advanced/logging.md)
+- [Localization](docs/advanced/localization.md)
+- [Task Scheduler](docs/SCHEDULER.md)
+- [Soft Deletes](docs/SOFT_DELETES.md)
+- [SEO Management](docs/advanced/seo.md)
+- [CMS System](docs/advanced/cms.md)
+- [Broadcasting](docs/advanced/broadcasting.md)
+- [Testing](docs/testing/getting-started.md)
 
 ### Reference
-- 🔧 [Contributing Guidelines](CONTRIBUTING.md)
-- 🔒 [Security Policy](SECURITY.md)
-- 📋 [Changelog](CHANGELOG.md)
-- 📦 [Composer Packages](COMPOSER_PACKAGES.md)
+- [Contributing Guidelines](CONTRIBUTING.md)
+- [Security Policy](SECURITY.md)
+- [Changelog](CHANGELOG.md)
+- [Composer Packages](COMPOSER_PACKAGES.md)
 
-## 🔧 Core Features
+## Core Features
 
-### 🛣️ Routing
+### Routing
 
 ```php
 use NeoPhp\Router\Router;
@@ -346,7 +342,7 @@ $router->get('/profile', [ProfileController::class, 'show'])->name('profile');
 $router->resource('/posts', PostController::class);
 ```
 
-### 🎮 Controllers
+### Controllers
 
 ```php
 namespace App\Http\Controllers;
@@ -410,7 +406,7 @@ class UserController extends Controller
 }
 ```
 
-### 💾 Database with Cycle ORM
+### Database with Cycle ORM
 
 ```php
 namespace App\Models;
@@ -500,7 +496,7 @@ $user = User::find(1);
 $posts = $user->posts; // Load related posts
 ```
 
-### 🎨 Views with Latte Templates
+### Views with Latte Templates
 
 **Layout** (`resources/views/layouts/app.latte`):
 
@@ -608,7 +604,7 @@ public function index(Request $request): Response
 }
 ```
 
-### 🔐 Authentication
+### Authentication
 
 ```php
 use NeoPhp\Auth\Auth;
@@ -643,7 +639,7 @@ $token = JWT::encode(['user_id' => $user->id]);
 $payload = JWT::decode($token);
 ```
 
-### 📦 Storage & File Upload
+### Storage & File Upload
 
 ```php
 use NeoPhp\Storage\Storage;
@@ -679,7 +675,7 @@ $processor->load($file)
     ->save('public/thumbnails/image.jpg');
 ```
 
-### 🚀 Caching
+### Caching
 
 ```php
 use NeoPhp\Cache\Cache;
@@ -717,7 +713,7 @@ Cache::tags(['users', 'posts'])->put('key', 'value', 3600);
 Cache::tags(['users'])->flush(); // Clear all tagged items
 ```
 
-### ⏰ Task Scheduler
+### Task Scheduler
 
 ```php
 // app/Console/Kernel.php
@@ -760,7 +756,7 @@ Run scheduler: `php neo schedule:run`
 
 Add to crontab: `* * * * * cd /path-to-project && php neo schedule:run >> /dev/null 2>&1`
 
-### 📡 Queue System
+### Queue System
 
 ```php
 use NeoPhp\Queue\Queue;
@@ -789,7 +785,7 @@ class SendEmailJob
 
 Run worker: `php neo queue:work`
 
-### 📊 Logging
+### Logging
 
 ```php
 use NeoPhp\Logging\Log;
@@ -816,7 +812,7 @@ Log::channel('slack')->error('Production error');
 Log::channel('database')->info('User action logged');
 ```
 
-## �️ Configuration
+##  Configuration
 
 NeoPhp uses environment variables and configuration files for settings.
 
@@ -890,7 +886,7 @@ All configuration files are in the `config/` directory:
 
 See [Configuration Guide](docs/configuration.md) for details.
 
-## 🧪 Testing
+## Testing
 
 NeoPhp provides testing utilities for HTTP and database testing:
 
@@ -947,7 +943,7 @@ class UserApiTest extends TestCase
 
 Run tests: `php neo test`
 
-## 📦 Deployment
+## Deployment
 
 ### Production Optimization
 
@@ -1018,7 +1014,7 @@ server {
 
 See [Deployment Guide](docs/deployment/production.md) for detailed instructions.
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
@@ -1057,11 +1053,11 @@ composer analyse
 composer test
 ```
 
-## 📄 License
+## License
 
 NeoPhp Framework is open-sourced software licensed under the [MIT license](LICENSE).
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 NeoPhp is built on top of excellent open-source packages:
 
@@ -1070,14 +1066,14 @@ NeoPhp is built on top of excellent open-source packages:
 - [PSR-3 Logger](https://www.php-fig.org/psr/psr-3/) - Logging Interface
 - [PSR-7 HTTP Message](https://www.php-fig.org/psr/psr-7/) - HTTP Interfaces
 
-## 📞 Support
+## Support
 
-- 📖 [Documentation](docs/README.md)
-- 🐛 [Issue Tracker](https://github.com/yourusername/NeoPhp/issues)
-- 💬 [Discussions](https://github.com/yourusername/NeoPhp/discussions)
-- 📧 Email: support@NeoPhp.dev
+- [Documentation](docs/README.md)
+- [Issue Tracker](https://github.com/yourusername/NeoPhp/issues)
+- [Discussions](https://github.com/yourusername/NeoPhp/discussions)
+- Email: support@NeoPhp.dev
 
-## 🌟 Sponsors
+## Sponsors
 
 Become a sponsor and get your logo here with a link to your website.
 
@@ -1085,26 +1081,26 @@ Become a sponsor and get your logo here with a link to your website.
 
 <div align="center">
 
-**Built with ❤️ by the NeoPhp Team**
+**Built with by the NeoPhp Team**
 
-[⭐ Star us on GitHub](https://github.com/yourusername/NeoPhp) | [🐦 Follow on Twitter](https://twitter.com/NeoPhp) | [💼 Hire Us](https://NeoPhp.dev)
+[Star us on GitHub](https://github.com/yourusername/NeoPhp) | [Follow on Twitter](https://twitter.com/NeoPhp) | [Hire Us](https://NeoPhp.dev)
 
 </div>
 | CLI Tools | |
 | Multi-Tenancy | |
 | Migration System | |
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Here's how you can help:
 
 ### Ways to Contribute
 
-- 🐛 **Report Bugs** - Help us identify and fix issues
-- ✨ **Suggest Features** - Share your ideas for improvements
-- 📝 **Improve Documentation** - Help make our docs better
-- 🔧 **Submit Code** - Fix bugs or implement features
-- 🧪 **Write Tests** - Improve test coverage
+- **Report Bugs** - Help us identify and fix issues
+- **Suggest Features** - Share your ideas for improvements
+- **Improve Documentation** - Help make our docs better
+- **Submit Code** - Fix bugs or implement features
+- **Write Tests** - Improve test coverage
 
 ### Development Setup
 
@@ -1156,7 +1152,7 @@ docs: update installation guide
 test: add user controller tests
 ```
 
-## 🔒 Security
+## Security
 
 ### Reporting Security Issues
 
@@ -1181,21 +1177,21 @@ Report security issues to: **security@neophp.dev**
 
 NeoPhp Framework includes:
 
-- ✅ **JWT Authentication** - Secure token-based auth
-- ✅ **RBAC** - Role-based access control
-- ✅ **SQL Injection Protection** - Prepared statements with Cycle ORM
-- ✅ **XSS Protection** - Template escaping with Latte
-- ✅ **CSRF Protection** - Token validation middleware
-- ✅ **Rate Limiting** - Built-in throttling
-- ✅ **Password Hashing** - Bcrypt/Argon2 support
+- **JWT Authentication** - Secure token-based auth
+- **RBAC** - Role-based access control
+- **SQL Injection Protection** - Prepared statements with Cycle ORM
+- **XSS Protection** - Template escaping with Latte
+- **CSRF Protection** - Token validation middleware
+- **Rate Limiting** - Built-in throttling
+- **Password Hashing** - Bcrypt/Argon2 support
 
 ### Security Best Practices
 
 ```php
-// ✅ Good - Use ORM (prevents SQL injection)
+// Good - Use ORM (prevents SQL injection)
 $user = User::where('email', $email)->first();
 
-// ❌ Bad - Raw SQL without parameters
+// Bad - Raw SQL without parameters
 $user = DB::raw("SELECT * FROM users WHERE email = '$email'");
 
 // Always validate input
@@ -1210,7 +1206,7 @@ $router->middleware(['csrf'])->group(function($router) {
 });
 ```
 
-## 📜 Code of Conduct
+## � Code of Conduct
 
 ### Our Standards
 
@@ -1228,36 +1224,36 @@ $router->middleware(['csrf'])->group(function($router) {
 
 Report issues to: conduct@neophp.dev
 
-## 📋 Changelog
+## Changelog
 
 ### Version 1.0.0 (December 2025)
 
 **Initial Release**
 
-- ✅ Core framework with routing, controllers, models
-- ✅ Cycle ORM integration (MySQL, PostgreSQL, SQLite)
-- ✅ Latte template engine
-- ✅ Authentication & Authorization (JWT, Session, RBAC)
-- ✅ Storage & Media management (Local, S3, CDN)
-- ✅ Caching system (Redis, Memcached, File)
-- ✅ REST API support
-- ✅ Logging & Monitoring
-- ✅ Localization
-- ✅ Task Scheduler
-- ✅ SEO & CMS features
-- ✅ Broadcasting (Pusher, Redis)
-- ✅ Testing utilities
-- ✅ CLI commands
+- Core framework with routing, controllers, models
+- Cycle ORM integration (MySQL, PostgreSQL, SQLite)
+- Latte template engine
+- Authentication & Authorization (JWT, Session, RBAC)
+- Storage & Media management (Local, S3, CDN)
+- Caching system (Redis, Memcached, File)
+- REST API support
+- Logging & Monitoring
+- Localization
+- Task Scheduler
+- SEO & CMS features
+- Broadcasting (Pusher, Redis)
+- Testing utilities
+- CLI commands
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
-## 🔒 Security
+## Security
 
 For security issues, please see [SECURITY.md](SECURITY.md).
 
-## 📄 License
+## License
 
 MIT License - see [LICENSE](LICENSE) file.
 
@@ -1267,6 +1263,6 @@ MIT License - see [LICENSE](LICENSE) file.
 
 **NeoPhp** - Simple. Explicit. Predictable.
 
-Made with ❤️ by developers who value clarity
+Made with by developers who value clarity
 
 </div>

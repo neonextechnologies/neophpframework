@@ -4,12 +4,12 @@ NeoPhp Framework is a modern, full-stack PHP framework with modular architecture
 
 ## Features
 
-* 🚀 **High Performance** - Built with Cycle ORM (2-3x faster than Eloquent)
-* 🧩 **Modular Architecture** - Self-contained modules with dependency injection
-* 🔐 **Built-in Security** - JWT authentication & RBAC authorization
-* 💾 **Database Integration** - Cycle ORM with PostgreSQL, MySQL, SQLite
-* 🎨 **Frontend Support** - Latte template engine and asset management
-* 🌐 **Advanced Features** - WebSockets, caching, queues, broadcasting
+* **High Performance** - Built with Cycle ORM (2-3x faster than Eloquent)
+* **Modular Architecture** - Self-contained modules with dependency injection
+* **Built-in Security** - JWT authentication & RBAC authorization
+* **Database Integration** - Cycle ORM with PostgreSQL, MySQL, SQLite
+* **Frontend Support** - Latte template engine and asset management
+* **Advanced Features** - WebSockets, caching, queues, broadcasting
 
 ## Quick Start
 
@@ -33,9 +33,7 @@ neo migrate
 neo serve
 ```
 
-Your app is now running on `http://localhost:8000` with database, auth, and routing configured! 🎉
-
-## What is NeoPhp Framework?
+Your app is now running on `http://localhost:8000` with database, auth, and routing configured! ## What is NeoPhp Framework?
 
 NeoPhp is a modern PHP framework designed for developers who value clarity, performance, and modular architecture. Built with principles of clean code and SOLID principles.
 
