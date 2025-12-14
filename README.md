@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](#changelog)
 
-**A modern, full-featured PHP framework built for performance and developer experience**
+**A modern, full-stack PHP framework with modular architecture built for performance and developer experience**
 
 *Powered by Cycle ORM and Latte Templates*
 
@@ -42,6 +42,7 @@
 - **⚡ Performance First**: Built with Cycle ORM (2-3x faster than Eloquent)
 - **🎨 Modern PHP**: PHP 8.3+, typed properties, enums, attributes
 - **📦 Feature Complete**: Everything you need out of the box
+- **🧩 Modular Monolith**: Well-organized modules, easy to scale
 - **🔧 Developer Friendly**: Intuitive APIs, comprehensive documentation
 - **🏗️ Clean Architecture**: Service-oriented, SOLID principles
 - **🌐 Production Ready**: Battle-tested components, security first
