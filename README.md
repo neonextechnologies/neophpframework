@@ -291,48 +291,57 @@ class User
 
 ---
 
-##  Project Structure
+## 📁 Project Structure
 
 ```
 neophpframework/
 ├── app/                    # Application code
-│   ├── Http/              # HTTP layer
-│   │   ├── Controllers/   # Request handlers
-│   │   ├── Middleware/    # HTTP middleware
-│   │   └── Requests/      # Form requests & validation
+│   ├── Controllers/       # Request handlers
 │   ├── Entities/          # Cycle ORM entities
+│   ├── Http/              # HTTP layer
+│   ├── Jobs/              # Queue jobs
+│   ├── Libraries/         # Custom libraries
+│   ├── Models/            # Business models
+│   ├── Policies/          # Authorization policies
 │   ├── Repositories/      # Data repositories
-│   ├── Services/          # Business logic services
-│   └── Providers/         # Service providers
+│   └── Services/          # Business logic services
 │
 ├── config/                # Configuration files
 │   ├── app.php           # Application config
 │   ├── database.php      # Database connections
 │   ├── cache.php         # Cache configuration
+│   ├── routes.php        # Route definitions
+│   ├── api.php           # API configuration
 │   └── ...               # Other configs
 │
+├── modules/               # Modular features
+│   └── [custom modules]  # Self-contained modules
+│
 ├── neocore/              # Framework core
-│   ├── src/              # Core source code
-│   └── helpers/          # Helper functions
+│   └── src/              # Core source code
+│       ├── Auth/         # Authentication
+│       ├── Cache/        # Caching system
+│       ├── Storage/      # File storage
+│       └── ...           # Other core features
 │
 ├── public/                # Web root (document root)
 │   ├── index.php         # Application entry point
-│   └── assets/           # Compiled assets
+│   └── .htaccess         # Apache configuration
 │
 ├── resources/             # Application resources
 │   ├── views/            # Latte templates
-│   ├── lang/             # Language files
-│   └── assets/           # Source assets
-│
-├── routes/                # Route definitions
-│   ├── web.php           # Web routes
-│   ├── api.php           # API routes
-│   └── console.php       # Console commands
+│   └── lang/             # Language files
 │
 ├── storage/               # Storage directory
 │   ├── cache/            # Application cache
 │   ├── logs/             # Log files
-│   └── uploads/          # Private uploads
+│   ├── migrations/       # Database migrations
+│   └── queue/            # Queue jobs
+│
+├── system/                # System core
+│   ├── CLI/              # CLI commands
+│   ├── Core/             # Core system classes
+│   └── Helpers/          # Helper functions
 │
 ├── tests/                 # Test suite
 │   ├── Feature/          # Feature tests
