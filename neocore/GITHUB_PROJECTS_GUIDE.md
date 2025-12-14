@@ -35,7 +35,7 @@
 5. **สร้าง Project**
    - ไปที่ Repository → Projects → New project
    - เลือก "Table" template
-   - ตั้งชื่อ: "NeoCore Development Backlog"
+   - ตั้งชื่อ: "NeoPhp Development Backlog"
    
 6. **เพิ่ม Issues เข้า Project**
    - ใน Project → Add items → เลือก Issues ที่สร้าง

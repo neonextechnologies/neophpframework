@@ -1,6 +1,6 @@
 # Latte Template Engine
 
-NeoCore Framework ใช้ **Latte Template Engine** สำหรับการสร้าง UI ซึ่งมี syntax คล้าย Blade แต่เร็วกว่า 2 เท่า
+NeoPhp Framework ใช้ **Latte Template Engine** สำหรับการสร้าง UI ซึ่งมี syntax คล้าย Blade แต่เร็วกว่า 2 เท่า
 
 ## คุณสมบัติ
 
@@ -21,7 +21,7 @@ return [
     'auto_refresh' => true, // Auto-recompile in development
     
     'globals' => [
-        'app_name' => 'NeoCore Framework',
+        'app_name' => 'NeoPhp Framework',
         'app_version' => '1.0.0',
     ],
 ];
@@ -49,7 +49,7 @@ resources/views/
 
 namespace App\Http\Controllers;
 
-use NeoCore\System\Core\Controller;
+use NeoPhp\System\Core\Controller;
 
 class HomeController extends Controller
 {
@@ -159,7 +159,7 @@ if ($this->viewExists('users/index')) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{block title}NeoCore{/block}</title>
+    <title>{block title}NeoPhp{/block}</title>
     
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
@@ -201,10 +201,10 @@ if ($this->viewExists('users/index')) {
 ```latte
 {extends 'layouts/app.latte'}
 
-{block title}Welcome - NeoCore{/block}
+{block title}Welcome - NeoPhp{/block}
 
 {block content}
-    <h2>Welcome to NeoCore Framework</h2>
+    <h2>Welcome to NeoPhp Framework</h2>
     
     <div class="features">
         <h3>Features</h3>
@@ -288,7 +288,7 @@ Filters ใช้สำหรับแปลงค่าข้อมูล:
 {$value|default: 'N/A'}    {* If value is empty *}
 ```
 
-### Custom Filters (NeoCore)
+### Custom Filters (NeoPhp)
 
 ```latte
 {* URL helper *}
@@ -397,7 +397,7 @@ Filters ใช้สำหรับแปลงค่าข้อมูล:
 ```latte
 {extends 'layouts/app.latte'}
 
-{block title}Users - NeoCore{/block}
+{block title}Users - NeoPhp{/block}
 
 {block content}
     <h2>Users ({$total})</h2>

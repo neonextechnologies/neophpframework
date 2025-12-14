@@ -1,4 +1,4 @@
-# NeoCore Framework Development Backlog
+# NeoPhp Framework Development Backlog
 
 **Repository:** @neonextechnologies/neophp-framework  
 **Current Version:** 1.0.0  

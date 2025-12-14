@@ -1,0 +1,47 @@
+{
+    "welcome": "ยินดีต้อนรับสู่ NeoCore Framework",
+    "hello": "สวัสดี, :name!",
+    "goodbye": "ลาก่อน, :name!",
+    
+    "auth": {
+        "login": "เข้าสู่ระบบ",
+        "logout": "ออกจากระบบ",
+        "register": "ลงทะเบียน",
+        "email": "ที่อยู่อีเมล",
+        "password": "รหัสผ่าน",
+        "remember_me": "จดจำฉันไว้",
+        "forgot_password": "ลืมรหัสผ่าน?",
+        "failed": "ข้อมูลประจำตัวเหล่านี้ไม่ตรงกับบันทึกของเรา",
+        "throttle": "มีความพยายามเข้าสู่ระบบมากเกินไป กรุณาลองอีกครั้งใน :seconds วินาที"
+    },
+
+    "pagination": {
+        "previous": "&laquo; ก่อนหน้า",
+        "next": "ถัดไป &raquo;"
+    },
+
+    "validation": {
+        "required": "ฟิลด์ :attribute จำเป็นต้องกรอก",
+        "email": ":attribute ต้องเป็นอีเมลที่ถูกต้อง",
+        "min": {
+            "numeric": ":attribute ต้องมีค่าอย่างน้อย :min",
+            "string": ":attribute ต้องมีอย่างน้อย :min ตัวอักษร"
+        },
+        "max": {
+            "numeric": ":attribute ต้องไม่เกิน :max",
+            "string": ":attribute ต้องไม่เกิน :max ตัวอักษร"
+        },
+        "unique": ":attribute นี้ถูกใช้งานแล้ว",
+        "confirmed": "การยืนยัน :attribute ไม่ตรงกัน"
+    },
+
+    "messages": {
+        "success": "ดำเนินการสำเร็จ!",
+        "error": "เกิดข้อผิดพลาด กรุณาลองอีกครั้ง",
+        "not_found": "ไม่พบข้อมูลที่ต้องการ",
+        "unauthorized": "คุณไม่ได้รับอนุญาตให้ทำการนี้",
+        "forbidden": "การเข้าถึงถูกปิดกั้น"
+    },
+
+    "items": "{0} ไม่มีรายการ|{1} หนึ่งรายการ|[2,*] :count รายการ"
+}

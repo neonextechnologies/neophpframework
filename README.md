@@ -1,205 +1,401 @@
 <div align="center">
 
-# NeoCore PHP Framework
+# 🚀 NeoPhp Framework
 
-[![PHP Version](https://img.shields.io/badge/php-%3E%3D8.0-blue.svg)](https://php.net)
+[![PHP Version](https://img.shields.io/badge/php-%3E%3D8.3-blue.svg)](https://php.net)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](#changelog)
 
-**A lightweight, explicit, and predictable PHP framework**
+**A modern, full-featured PHP framework built for performance and developer experience**
 
-*Built for developers who value clarity and control over magic*
+*Powered by Cycle ORM and Latte Templates*
 
-[Quick Start](#-quick-start) • [Documentation](#-documentation) • [Features](#-features) • [Contributing](CONTRIBUTING.md)
+[Documentation](docs/README.md) • [Quick Start](#-quick-start) • [Features](#-features) • [Contributing](#-contributing)
 
 </div>
 
 ---
 
-## 🎯 Design Philosophy
+## ✨ Features
 
-- **No Magic**: Everything is explicit and traceable
-- **No Facades**: No hidden static proxies
-- **No Auto-DI**: No service container or automatic dependency injection
-- **No Auto-Discovery**: Routes and modules must be registered explicitly
-- **Built-in ORM**: Cycle ORM with DataMapper pattern (2-3x faster than Eloquent)
-- **Built-in Templates**: Latte Template Engine (90% similar to Blade, 2x faster)
-- **Shared Hosting Ready**: Runs without Composer during runtime
+### Core Features
+- 🔐 **Authentication & Authorization** - JWT, Session, RBAC, Permissions
+- 💾 **Database** - Cycle ORM, PostgreSQL, MySQL, SQLite support
+- 🎨 **Template Engine** - Latte (Blade-like syntax, 2x faster)
+- 🛣️ **Routing** - RESTful, Resource routes, Route groups
+- 🔒 **Security** - CSRF, XSS protection, Password hashing, Rate limiting
 
-## 📁 Structure
+### Advanced Features
+- 📦 **Storage & Media** - Local, S3, Image processing, CDN support
+- 🚀 **Caching** - Redis, Memcached, File, Array drivers
+- 📡 **API** - RESTful API, JSON responses, API authentication
+- 📊 **Logging & Monitoring** - PSR-3, Multiple channels, Error tracking
+- 🌍 **Localization** - Multi-language, Translation management
+- ⏰ **Task Scheduler** - Cron-like scheduling, Background jobs
+- 🔍 **SEO** - Meta tags, Sitemaps, Open Graph, Schema.org
+- 📝 **CMS** - Page management, Content blocks, Menus
+- 📢 **Broadcasting** - Pusher, Redis pub/sub, WebSockets
+- 🧪 **Testing** - HTTP testing, Database testing, Mocking
+
+## 🎯 Why NeoPhp Framework?
+
+- **⚡ Performance First**: Built with Cycle ORM (2-3x faster than Eloquent)
+- **🎨 Modern PHP**: PHP 8.3+, typed properties, enums, attributes
+- **📦 Feature Complete**: Everything you need out of the box
+- **🔧 Developer Friendly**: Intuitive APIs, comprehensive documentation
+- **🏗️ Clean Architecture**: Service-oriented, SOLID principles
+- **🌐 Production Ready**: Battle-tested components, security first
+
+## 📁 Project Structure
 
 ```
-/neocore
-├── public/              # Web root
-│   └── index.php        # Entry point
-├── app/                 # Application code
-│   ├── Http/
-│   │   ├── Controllers/
-│   │   ├── Middleware/
-│   │   └── Requests/
-│   ├── Models/
-│   ├── Services/
-│   └── Policies/
-├── modules/             # Isolated modules
-├── system/              # Framework core
-│   ├── Core/
-│   ├── CLI/
-│   └── Helpers/
-├── config/              # Configuration files
-└── storage/             # Logs, cache, sessions
+neophpframework/
+├── app/                    # Application code
+│   ├── Http/              # HTTP layer
+│   │   ├── Controllers/   # Request handlers
+│   │   ├── Middleware/    # HTTP middleware
+│   │   └── Requests/      # Form requests
+│   ├── Models/            # Database models
+│   └── Services/          # Business logic
+├── config/                # Configuration files
+├── NeoPhp/               # Framework core
+│   ├── src/              # Core source code
+│   └── helpers/          # Helper functions
+├── public/                # Web root
+│   └── index.php         # Entry point
+├── resources/             # Resources
+│   ├── views/            # Latte templates
+│   └── lang/             # Language files
+├── routes/                # Route definitions
+├── storage/               # Storage
+│   ├── cache/            # Cache files
+│   ├── logs/             # Log files
+│   └── uploads/          # Uploaded files
+└── tests/                 # Test suite
 ```
 
 ## 📦 Installation
 
+### Requirements
+- PHP 8.3 or higher
+- Composer 2.0+
+- MySQL 5.7+ / PostgreSQL 12+ / SQLite 3+
+- PDO Extension
+- JSON Extension
+
+### Quick Install
+
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/neocore.git
-cd neocore
+git clone https://github.com/yourusername/NeoPhp.git neophpframework
+cd neophpframework
 
-# Install dependencies (optional - for development)
+# Install dependencies
 composer install
 
 # Copy environment file
 cp .env.example .env
 
-# Configure database in .env
-# Then run migrations
-php neocore migrate
+# Configure database in .env file
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=NeoPhp
+DB_USERNAME=root
+DB_PASSWORD=
+
+# Generate application key
+php NeoPhp key:generate
+
+# Run migrations
+php NeoPhp migrate
 
 # Start development server
-php neocore serve
+php NeoPhp serve
 ```
 
 Visit `http://localhost:8000` 🚀
 
+For detailed installation instructions, see [Installation Guide](docs/INSTALLATION.md).
+
 ## 📝 CLI Commands
 
-| Command | Description |
-|---------|-------------|
-| `make:module <name>` | Create new module |
-| `make:controller <name>` | Create new controller |
-| `make:entity <name>` | Create new Cycle ORM entity |
-| `make:repository <name>` | Create new repository |
-| `make:model <name>` | Create new model |
-| `make:service <name>` | Create new service |
-| `make:migration <name>` | Create new migration |
-| `orm:sync [--run]` | Sync ORM schema to database |
-| `view:clear` | Clear Latte template cache |
-| `cache:clear` | Clear ORM schema cache |
-| `migrate` | Run migrations |
-| `migrate:rollback` | Rollback migrations |
-| `worker:run [queue]` | Start queue worker |
-| `serve [host] [port]` | Start dev server |
-| `list` | List all commands |
+The NeoPhp CLI provides powerful commands for development:
+
+### Generators
+```bash
+php NeoPhp make:controller UserController    # Create controller
+php NeoPhp make:model User                   # Create model
+php NeoPhp make:migration create_users_table # Create migration
+php NeoPhp make:middleware AuthMiddleware    # Create middleware
+php NeoPhp make:service UserService          # Create service
+php NeoPhp make:seeder UserSeeder           # Create seeder
+php NeoPhp make:factory UserFactory         # Create factory
+php NeoPhp make:command SendEmails          # Create CLI command
+```
+
+### Database
+```bash
+php NeoPhp migrate                  # Run migrations
+php NeoPhp migrate:rollback         # Rollback last migration
+php NeoPhp migrate:reset            # Reset all migrations
+php NeoPhp migrate:refresh          # Reset and re-run migrations
+php NeoPhp migrate:status           # Show migration status
+php NeoPhp db:seed                  # Run database seeders
+```
+
+### Cache & Optimization
+```bash
+php NeoPhp cache:clear              # Clear application cache
+php NeoPhp view:clear               # Clear compiled views
+php NeoPhp config:clear             # Clear config cache
+php NeoPhp route:clear              # Clear route cache
+php NeoPhp optimize                 # Optimize for production
+```
+
+### Queue & Scheduler
+```bash
+php NeoPhp queue:work               # Start queue worker
+php NeoPhp queue:listen             # Listen to queue
+php NeoPhp queue:restart            # Restart queue workers
+php NeoPhp schedule:run             # Run scheduled tasks
+php NeoPhp schedule:list            # List scheduled tasks
+```
+
+### Development
+```bash
+php NeoPhp serve                    # Start dev server (localhost:8000)
+php NeoPhp serve --port=3000        # Custom port
+php NeoPhp tinker                   # Interactive console
+php NeoPhp key:generate             # Generate APP_KEY
+php NeoPhp storage:link             # Create storage symlink
+```
+
+### Testing
+```bash
+php NeoPhp test                     # Run tests
+php NeoPhp test --filter=UserTest   # Run specific test
+php NeoPhp test --coverage          # Run with coverage
+```
 
 ## 🚀 Quick Start
 
-### Step 1: Create a Controller
+### Create Your First API Endpoint
 
 ```bash
-php neocore make:controller UserController
+# Create a controller
+php NeoPhp make:controller Api/UserController
+
+# Create a model
+php NeoPhp make:model User
 ```
 
-### Step 2: Define Routes
-
-Edit `config/routes.php`:
+**Define routes** in `routes/api.php`:
 
 ```php
-$router->get('/users', 'App\\Http\\Controllers\\UserController@index');
-$router->post('/users', 'App\\Http\\Controllers\\UserController@store');
-$router->get('/users/{id}', 'App\\Http\\Controllers\\UserController@show');
+use NeoPhp\Router\Router;
+
+$router = new Router();
+
+$router->prefix('/api')->group(function($router) {
+    $router->get('/users', [App\Http\Controllers\Api\UserController::class, 'index']);
+    $router->post('/users', [App\Http\Controllers\Api\UserController::class, 'store']);
+    $router->get('/users/{id}', [App\Http\Controllers\Api\UserController::class, 'show']);
+});
+
+return $router;
 ```
 
-### Step 3: Write Controller Logic
+**Controller** (`app/Http/Controllers/Api/UserController.php`):
 
 ```php
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
-use NeoCore\System\Core\Controller;
-use NeoCore\System\Core\Request;
-use NeoCore\System\Core\Response;
+use App\Models\User;
+use NeoPhp\Http\Request;
+use NeoPhp\Http\Response;
+use NeoPhp\Http\Controller;
 
 class UserController extends Controller
 {
-    public function index(Request $request, Response $response): Response
+    public function index(Request $request): Response
     {
-        $users = [
-            ['id' => 1, 'name' => 'John Doe'],
-            ['id' => 2, 'name' => 'Jane Smith']
-        ];
-        return $this->respondSuccess($response, $users);
+        $users = User::all();
+        return response()->json($users);
+    }
+
+    public function store(Request $request): Response
+    {
+        $validated = $request->validate([
+            'name' => 'required|min:3',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:8',
+        ]);
+
+        $user = User::create($validated);
+        
+        return response()->json($user, 201);
+    }
+
+    public function show(Request $request, int $id): Response
+    {
+        $user = User::findOrFail($id);
+        return response()->json($user);
     }
 }
 ```
 
-Visit `http://localhost:8000/users` and see JSON response!
+Visit `http://localhost:8000/api/users` 🎉
 
 ## 📚 Documentation
 
-- **[Contributing Guidelines](CONTRIBUTING.md)** - How to contribute
-- **[Security Policy](SECURITY.md)** - Report vulnerabilities
-- **[Changelog](CHANGELOG.md)** - Version history
+### Getting Started
+- 📖 [Installation Guide](docs/INSTALLATION.md)
+- 🚀 [Quick Start Guide](docs/getting-started/quick-start.md)
+- 🏗️ [Directory Structure](docs/directory-structure.md)
+- ⚙️ [Configuration](docs/configuration.md)
+
+### Core Concepts
+- 🛣️ [Routing](docs/basics/routing.md)
+- 🎮 [Controllers](docs/basics/controllers.md)
+- 💾 [Database & ORM](docs/database/orm.md)
+- 🎨 [Views & Templates](docs/basics/views.md)
+- 🔐 [Authentication](docs/security/authentication.md)
+- 🔑 [Authorization](docs/security/authorization.md)
+
+### Advanced Topics
+- 📦 [Storage & Media](docs/advanced/storage.md)
+- 🚀 [Caching](docs/advanced/caching.md)
+- 📡 [REST API](docs/advanced/api.md)
+- 📊 [Logging](docs/advanced/logging.md)
+- 🌍 [Localization](docs/advanced/localization.md)
+- ⏰ [Task Scheduler](docs/SCHEDULER.md)
+- 🗑️ [Soft Deletes](docs/SOFT_DELETES.md)
+- 🔍 [SEO Management](docs/advanced/seo.md)
+- 📝 [CMS System](docs/advanced/cms.md)
+- 📢 [Broadcasting](docs/advanced/broadcasting.md)
+- 🧪 [Testing](docs/testing/getting-started.md)
+
+### Reference
+- 🔧 [Contributing Guidelines](CONTRIBUTING.md)
+- 🔒 [Security Policy](SECURITY.md)
+- 📋 [Changelog](CHANGELOG.md)
+- 📦 [Composer Packages](COMPOSER_PACKAGES.md)
 
 ## 🔧 Core Features
 
-### Routing
+### 🛣️ Routing
 
 ```php
+use NeoPhp\Router\Router;
+
+$router = new Router();
+
 // Basic routes
-$router->get('/users', 'App\\Http\\Controllers\\UserController@index');
-$router->post('/users', 'App\\Http\\Controllers\\UserController@store');
-$router->get('/users/{id}', 'App\\Http\\Controllers\\UserController@show');
+$router->get('/users', [UserController::class, 'index']);
+$router->post('/users', [UserController::class, 'store']);
+$router->put('/users/{id}', [UserController::class, 'update']);
+$router->delete('/users/{id}', [UserController::class, 'destroy']);
+
+// Route parameters
+$router->get('/posts/{id}', function($id) {
+    return response()->json(['id' => $id]);
+});
 
 // Route groups with prefix
 $router->prefix('/api/v1')->group(function($router) {
-    $router->get('/posts', 'PostController@index');
+    $router->get('/posts', [PostController::class, 'index']);
+    $router->get('/posts/{id}', [PostController::class, 'show']);
 });
 
 // Middleware
-$router->middleware(['auth'])->group(function($router) {
-    $router->get('/profile', 'ProfileController@show');
+$router->middleware(['auth', 'admin'])->group(function($router) {
+    $router->get('/dashboard', [DashboardController::class, 'index']);
 });
+
+// Named routes
+$router->get('/profile', [ProfileController::class, 'show'])->name('profile');
+
+// Resource routes (RESTful)
+$router->resource('/posts', PostController::class);
 ```
 
-### Controllers
+### 🎮 Controllers
 
 ```php
 namespace App\Http\Controllers;
 
-use NeoCore\System\Core\Controller;
-use NeoCore\System\Core\Request;
-use NeoCore\System\Core\Response;
+use App\Models\User;
+use NeoPhp\Http\Controller;
+use NeoPhp\Http\Request;
+use NeoPhp\Http\Response;
 
 class UserController extends Controller
 {
-    public function store(Request $request, Response $response): Response
+    public function index(Request $request): Response
     {
-        $data = $request->all();
-        
-        // Validation
-        $errors = $this->validate($data, [
-            'name' => 'required|min:3',
-            'email' => 'required|email',
+        $users = User::paginate(15);
+        return response()->json($users);
+    }
+
+    public function store(Request $request): Response
+    {
+        $validated = $request->validate([
+            'name' => 'required|min:3|max:255',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:8|confirmed',
         ]);
 
-        if (!empty($errors)) {
-            return $this->respondValidationError($response, $errors);
-        }
+        $user = User::create([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'password' => password_hash($validated['password'], PASSWORD_BCRYPT),
+        ]);
 
-        return $this->respondSuccess($response, $data, 'User created', 201);
+        return response()->json($user, 201);
+    }
+
+    public function show(int $id): Response
+    {
+        $user = User::findOrFail($id);
+        return response()->json($user);
+    }
+
+    public function update(Request $request, int $id): Response
+    {
+        $user = User::findOrFail($id);
+        
+        $validated = $request->validate([
+            'name' => 'sometimes|min:3|max:255',
+            'email' => 'sometimes|email|unique:users,email,' . $id,
+        ]);
+
+        $user->update($validated);
+        return response()->json($user);
+    }
+
+    public function destroy(int $id): Response
+    {
+        $user = User::findOrFail($id);
+        $user->delete();
+        
+        return response()->json(['message' => 'User deleted successfully']);
     }
 }
 ```
 
-### Database with Cycle ORM
+### 💾 Database with Cycle ORM
 
 ```php
-namespace App\Entities;
+namespace App\Models;
 
 use Cycle\Annotated\Annotation\Entity;
 use Cycle\Annotated\Annotation\Column;
+use Cycle\Annotated\Annotation\Relation\HasMany;
+use NeoPhp\Database\Model;
 
-#[Entity(repository: \App\Repositories\UserRepository::class)]
-class User
+#[Entity(table: 'users')]
+class User extends Model
 {
     #[Column(type: 'primary')]
     public int $id;
@@ -207,55 +403,111 @@ class User
     #[Column(type: 'string')]
     public string $name;
 
-    #[Column(type: 'string')]
+    #[Column(type: 'string', unique: true)]
     public string $email;
+
+    #[Column(type: 'string')]
+    public string $password;
+
+    #[Column(type: 'datetime', nullable: true)]
+    public ?\DateTimeImmutable $email_verified_at = null;
+
+    #[Column(type: 'datetime')]
+    public \DateTimeImmutable $created_at;
+
+    #[Column(type: 'datetime')]
+    public \DateTimeImmutable $updated_at;
+
+    #[HasMany(target: Post::class)]
+    public array $posts = [];
+
+    // Query methods
+    public static function findByEmail(string $email): ?self
+    {
+        return self::query()->where('email', $email)->first();
+    }
+
+    public static function active(): array
+    {
+        return self::query()->where('status', 'active')->get();
+    }
 }
 ```
 
-**Repository:**
+**Usage:**
 
 ```php
-namespace App\Repositories;
+// Find by ID
+$user = User::find(1);
 
-use Cycle\ORM\Select\Repository;
+// Find or fail (throws exception)
+$user = User::findOrFail(1);
 
-class UserRepository extends Repository
-{
-    public function findByEmail(string $email): ?User
-    {
-        return $this->findOne(['email' => $email]);
-    }
-    
-    public function findActive(): array
-    {
-        return $this->select()
-            ->where('status', 'active')
-            ->fetchAll();
-    }
-}
+// Create
+$user = User::create([
+    'name' => 'John Doe',
+    'email' => 'john@example.com',
+    'password' => password_hash('secret', PASSWORD_BCRYPT),
+]);
+
+// Update
+$user->update(['name' => 'Jane Doe']);
+
+// Delete
+$user->delete();
+
+// Soft delete (if using soft deletes trait)
+$user->softDelete();
+
+// Query builder
+$users = User::query()
+    ->where('status', 'active')
+    ->orderBy('created_at', 'desc')
+    ->limit(10)
+    ->get();
+
+// Pagination
+$users = User::paginate(15);
+
+// Relationships
+$user = User::find(1);
+$posts = $user->posts; // Load related posts
 ```
 
-**Usage in Controller:**
-
-```php
-use NeoCore\System\Core\ORMService;
-
-$userRepo = ORMService::getRepository(User::class);
-$user = $userRepo->findByEmail('user@example.com');
-```
-
-### Views with Latte Templates
+### 🎨 Views with Latte Templates
 
 **Layout** (`resources/views/layouts/app.latte`):
 
 ```latte
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>{block title}NeoCore{/block}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{block title}NeoPhp Framework{/block}</title>
+    <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-    {block content}Default content{/block}
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        {if $user}
+            <a href="/dashboard">Dashboard</a>
+            <a href="/logout">Logout</a>
+        {else}
+            <a href="/login">Login</a>
+        {/if}
+    </nav>
+
+    <main>
+        {block content}Default content{/block}
+    </main>
+
+    <footer>
+        <p>&copy; {date('Y')} NeoPhp Framework</p>
+    </footer>
+
+    <script src="/js/app.js"></script>
 </body>
 </html>
 ```
@@ -265,126 +517,711 @@ $user = $userRepo->findByEmail('user@example.com');
 ```latte
 {extends 'layouts/app.latte'}
 
-{block title}Users{/block}
+{block title}Users - NeoPhp{/block}
 
 {block content}
-    <h2>Users</h2>
-    {foreach $users as $user}
-        <div>
-            <h3>{$user->name}</h3>
-            <p>{$user->email}</p>
-        </div>
-    {/foreach}
+    <h1>Users</h1>
+
+    {if count($users) > 0}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Created</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {foreach $users as $user}
+                    <tr>
+                        <td>{$user->id}</td>
+                        <td>{$user->name}</td>
+                        <td>{$user->email}</td>
+                        <td>{$user->created_at|date:'Y-m-d'}</td>
+                        <td>
+                            <a href="/users/{$user->id}">View</a>
+                            <a href="/users/{$user->id}/edit">Edit</a>
+                        </td>
+                    </tr>
+                {/foreach}
+            </tbody>
+        </table>
+
+        {* Pagination *}
+        {if $users->hasPages()}
+            <div class="pagination">
+                {if $users->previousPageUrl()}
+                    <a href="{$users->previousPageUrl()}">Previous</a>
+                {/if}
+                
+                <span>Page {$users->currentPage()} of {$users->lastPage()}</span>
+                
+                {if $users->nextPageUrl()}
+                    <a href="{$users->nextPageUrl()}">Next</a>
+                {/if}
+            </div>
+        {/if}
+    {else}
+        <p>No users found.</p>
+    {/if}
 {/block}
 ```
 
 **Controller:**
 
 ```php
-public function index(Request $request, Response $response): Response
+public function index(Request $request): Response
 {
-    $users = $this->userRepository->findActive();
+    $users = User::query()
+        ->orderBy('created_at', 'desc')
+        ->paginate(15);
     
-    return $this->view($response, 'users/index', [
-        'users' => $users
-    ]);
+    return view('users/index', ['users' => $users]);
 }
 ```
 
-### Queue System
+### 🔐 Authentication
 
 ```php
-use NeoCore\System\Core\Queue;
+use NeoPhp\Auth\Auth;
 
-$queue = new Queue('file', ['path' => './storage/queue']);
+// Login
+$user = User::findByEmail($email);
+if ($user && password_verify($password, $user->password)) {
+    Auth::login($user);
+    return redirect('/dashboard');
+}
 
-// Push job
-$queue->push('emails', [
-    'handler' => 'App\\Jobs\\SendEmailJob',
-    'data' => ['email' => 'user@example.com']
-]);
+// Logout
+Auth::logout();
+
+// Check authentication
+if (Auth::check()) {
+    // User is authenticated
+}
+
+// Get current user
+$user = Auth::user();
+
+// Middleware protection
+$router->middleware(['auth'])->group(function($router) {
+    $router->get('/dashboard', [DashboardController::class, 'index']);
+});
+
+// JWT Authentication (API)
+use NeoPhp\Auth\JWT;
+
+$token = JWT::encode(['user_id' => $user->id]);
+$payload = JWT::decode($token);
 ```
 
-Run worker: `php neocore worker:run emails`
-
-### Middleware
+### 📦 Storage & File Upload
 
 ```php
-namespace App\Http\Middleware;
+use NeoPhp\Storage\Storage;
 
-use NeoCore\System\Core\Request;
-use NeoCore\System\Core\Response;
+// Upload file
+$file = $request->file('avatar');
+$path = Storage::disk('public')->put('avatars', $file);
 
-class AuthMiddleware
+// Store with custom name
+$path = Storage::disk('s3')->putFileAs('avatars', $file, 'user-123.jpg');
+
+// Get file URL
+$url = Storage::disk('public')->url($path);
+
+// Download file
+return Storage::disk('public')->download($path);
+
+// Delete file
+Storage::disk('public')->delete($path);
+
+// Check if file exists
+if (Storage::disk('public')->exists($path)) {
+    // File exists
+}
+
+// Image processing
+use NeoPhp\Media\ImageProcessor;
+
+$processor = new ImageProcessor();
+$processor->load($file)
+    ->resize(300, 300)
+    ->fit('cover')
+    ->save('public/thumbnails/image.jpg');
+```
+
+### 🚀 Caching
+
+```php
+use NeoPhp\Cache\Cache;
+
+// Store cache
+Cache::put('key', 'value', 3600); // TTL in seconds
+
+// Get cache
+$value = Cache::get('key');
+
+// Get with default
+$value = Cache::get('key', 'default');
+
+// Check existence
+if (Cache::has('key')) {
+    // Key exists
+}
+
+// Remember (get or store)
+$users = Cache::remember('users.all', 3600, function() {
+    return User::all();
+});
+
+// Forever (no expiration)
+Cache::forever('settings', $settings);
+
+// Forget
+Cache::forget('key');
+
+// Clear all
+Cache::flush();
+
+// Tags (Redis only)
+Cache::tags(['users', 'posts'])->put('key', 'value', 3600);
+Cache::tags(['users'])->flush(); // Clear all tagged items
+```
+
+### ⏰ Task Scheduler
+
+```php
+// app/Console/Kernel.php
+use NeoPhp\Scheduler\Scheduler;
+
+class Kernel
 {
-    public function handle(Request $request, Response $response, callable $next): Response
+    public function schedule(Scheduler $schedule): void
     {
-        if (!isset($_SESSION['user_id'])) {
-            return $response->json(['error' => 'Unauthorized'], 401);
-        }
-        return $next($request, $response);
+        // Run every minute
+        $schedule->command('emails:send')
+            ->everyMinute();
+
+        // Run hourly
+        $schedule->command('reports:generate')
+            ->hourly();
+
+        // Run daily at specific time
+        $schedule->command('backups:create')
+            ->dailyAt('02:00');
+
+        // Run weekly
+        $schedule->command('cache:clear')
+            ->weekly()
+            ->mondays()
+            ->at('03:00');
+
+        // Run monthly
+        $schedule->command('invoices:generate')
+            ->monthly();
+
+        // Custom cron
+        $schedule->command('custom:task')
+            ->cron('*/5 * * * *'); // Every 5 minutes
     }
 }
 ```
 
-## ⚙️ Configuration
+Run scheduler: `php NeoPhp schedule:run`
 
-**Database** (`config/database.php`):
+Add to crontab: `* * * * * cd /path-to-project && php NeoPhp schedule:run >> /dev/null 2>&1`
+
+### 📡 Queue System
 
 ```php
-return [
-    'default' => [
-        'driver' => 'mysql',
-        'host' => 'localhost',
-        'database' => 'neocore',
-        'username' => 'root',
-        'password' => '',
-        'charset' => 'utf8mb4',
-    ],
-];
+use NeoPhp\Queue\Queue;
+
+// Dispatch job
+Queue::push(SendEmailJob::class, [
+    'email' => 'user@example.com',
+    'subject' => 'Welcome',
+]);
+
+// Delayed job
+Queue::later(60, SendEmailJob::class, $data); // Delay 60 seconds
+
+// Job class
+namespace App\Jobs;
+
+class SendEmailJob
+{
+    public function handle(array $data): void
+    {
+        $email = $data['email'];
+        // Send email logic
+    }
+}
 ```
 
-## 📦 Using Composer Packages
+Run worker: `php NeoPhp queue:work`
 
-NeoCore comes with **Cycle ORM** and **Latte Templates** built-in. You can add more packages:
+### 📊 Logging
+
+```php
+use NeoPhp\Logging\Log;
+
+// Log levels
+Log::emergency('System is down');
+Log::alert('Action required');
+Log::critical('Critical condition');
+Log::error('Error occurred');
+Log::warning('Warning message');
+Log::notice('Normal but significant');
+Log::info('Informational message');
+Log::debug('Debug information');
+
+// With context
+Log::error('Payment failed', [
+    'user_id' => $userId,
+    'amount' => $amount,
+    'error' => $exception->getMessage(),
+]);
+
+// Different channels
+Log::channel('slack')->error('Production error');
+Log::channel('database')->info('User action logged');
+```
+
+## �️ Configuration
+
+NeoPhp uses environment variables and configuration files for settings.
+
+### Environment Configuration
+
+Copy `.env.example` to `.env` and configure:
+
+```env
+# Application
+APP_NAME="NeoPhp Framework"
+APP_ENV=local
+APP_DEBUG=true
+APP_URL=http://localhost:8000
+APP_KEY=
+
+# Database
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=NeoPhp
+DB_USERNAME=root
+DB_PASSWORD=
+
+# Cache
+CACHE_DRIVER=redis
+REDIS_HOST=127.0.0.1
+REDIS_PORT=6379
+REDIS_PASSWORD=
+
+# Session
+SESSION_DRIVER=file
+SESSION_LIFETIME=120
+
+# Queue
+QUEUE_CONNECTION=redis
+
+# Mail
+MAIL_DRIVER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=
+MAIL_PASSWORD=
+
+# Storage
+FILESYSTEM_DRIVER=local
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=
+
+# Broadcasting
+BROADCAST_DRIVER=redis
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_APP_CLUSTER=mt1
+```
+
+### Configuration Files
+
+All configuration files are in the `config/` directory:
+
+- `app.php` - Application settings
+- `database.php` - Database connections
+- `cache.php` - Cache configuration
+- `queue.php` - Queue configuration
+- `session.php` - Session settings
+- `mail.php` - Email configuration
+- `storage.php` - File storage
+- `broadcasting.php` - Real-time broadcasting
+
+See [Configuration Guide](docs/configuration.md) for details.
+
+## 🧪 Testing
+
+NeoPhp provides testing utilities for HTTP and database testing:
+
+```php
+namespace Tests\Feature;
+
+use NeoPhp\Testing\TestCase;
+use App\Models\User;
+
+class UserApiTest extends TestCase
+{
+    public function testCanCreateUser()
+    {
+        $response = $this->post('/api/users', [
+            'name' => 'John Doe',
+            'email' => 'john@example.com',
+            'password' => 'password123',
+        ]);
+
+        $response->assertStatus(201)
+            ->assertJson([
+                'name' => 'John Doe',
+                'email' => 'john@example.com',
+            ]);
+
+        $this->assertDatabaseHas('users', [
+            'email' => 'john@example.com',
+        ]);
+    }
+
+    public function testCanGetUser()
+    {
+        $user = User::factory()->create();
+
+        $response = $this->get('/api/users/' . $user->id);
+
+        $response->assertOk()
+            ->assertJsonStructure([
+                'id',
+                'name',
+                'email',
+                'created_at',
+            ]);
+    }
+
+    public function testRequiresAuthentication()
+    {
+        $response = $this->get('/api/dashboard');
+
+        $response->assertUnauthorized();
+    }
+}
+```
+
+Run tests: `php NeoPhp test`
+
+## 📦 Deployment
+
+### Production Optimization
 
 ```bash
-# Validation
-composer require respect/validation
+# Optimize autoloader
+composer install --optimize-autoloader --no-dev
 
-# Logging
-composer require monolog/monolog
+# Cache configuration
+php NeoPhp config:cache
 
-# HTTP Client
-composer require guzzlehttp/guzzle
+# Cache routes
+php NeoPhp route:cache
 
-# Image Processing
-composer require intervention/image
+# Optimize application
+php NeoPhp optimize
+
+# Set permissions
+chmod -R 755 storage
+chmod -R 755 bootstrap/cache
 ```
 
-See full examples in [COMPOSER_PACKAGES.md](COMPOSER_PACKAGES.md)
+### Web Server Configuration
 
-## 📋 Requirements
+**Apache** (`.htaccess` included):
+```apache
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+</IfModule>
+```
 
-- **PHP 8.0+**
-- **PDO extension**
-- **JSON extension**
-- mod_rewrite (Apache) or equivalent
+**Nginx**:
+```nginx
+server {
+    listen 80;
+    server_name example.com;
+    root /var/www/neophpframework/public;
 
-## 🎯 Core Principles
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
 
-| ✅ What NeoCore HAS | ❌ What NeoCore DOES NOT Have |
-|---------------------|------------------------------|
-| Explicit Routing | Service Container |
-| Simple Controllers | Facades |
-| **Cycle ORM (DataMapper)** | Auto Dependency Injection |
-| **Latte Templates** | Route Model Binding |
-| Queue System | Auto-Discovery |
-| Event System | Magic Methods |
-| Module System | Composer Runtime Dependency |
+    index index.php;
+
+    charset utf-8;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    error_page 404 /index.php;
+
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php/php8.3-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
+```
+
+See [Deployment Guide](docs/deployment/production.md) for detailed instructions.
+
+## 🤝 Contributing
+
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+### Development Setup
+
+```bash
+# Fork and clone repository
+git clone https://github.com/yourusername/NeoPhp.git
+cd NeoPhp
+
+# Install dependencies
+composer install
+
+# Create feature branch
+git checkout -b feature/my-new-feature
+
+# Make changes and commit
+git commit -am 'Add some feature'
+
+# Push to branch
+git push origin feature/my-new-feature
+
+# Create Pull Request
+```
+
+### Code Style
+
+```bash
+# Run code formatter
+composer format
+
+# Run code analysis
+composer analyse
+
+# Run tests
+composer test
+```
+
+## 📄 License
+
+NeoPhp Framework is open-sourced software licensed under the [MIT license](LICENSE).
+
+## 🙏 Acknowledgments
+
+NeoPhp is built on top of excellent open-source packages:
+
+- [Cycle ORM](https://cycle-orm.dev/) - Database ORM
+- [Latte](https://latte.nette.org/) - Template Engine
+- [PSR-3 Logger](https://www.php-fig.org/psr/psr-3/) - Logging Interface
+- [PSR-7 HTTP Message](https://www.php-fig.org/psr/psr-7/) - HTTP Interfaces
+
+## 📞 Support
+
+- 📖 [Documentation](docs/README.md)
+- 🐛 [Issue Tracker](https://github.com/yourusername/NeoPhp/issues)
+- 💬 [Discussions](https://github.com/yourusername/NeoPhp/discussions)
+- 📧 Email: support@NeoPhp.dev
+
+## 🌟 Sponsors
+
+Become a sponsor and get your logo here with a link to your website.
+
+---
+
+<div align="center">
+
+**Built with ❤️ by the NeoPhp Team**
+
+[⭐ Star us on GitHub](https://github.com/yourusername/NeoPhp) | [🐦 Follow on Twitter](https://twitter.com/NeoPhp) | [💼 Hire Us](https://NeoPhp.dev)
+
+</div>
 | CLI Tools | |
 | Multi-Tenancy | |
 | Migration System | |
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how you can help:
+
+### Ways to Contribute
+
+- 🐛 **Report Bugs** - Help us identify and fix issues
+- ✨ **Suggest Features** - Share your ideas for improvements
+- 📝 **Improve Documentation** - Help make our docs better
+- 🔧 **Submit Code** - Fix bugs or implement features
+- 🧪 **Write Tests** - Improve test coverage
+
+### Development Setup
+
+```bash
+# Fork and clone the repository
+git clone https://github.com/yourusername/neophpframework.git
+cd neophpframework
+
+# Install dependencies
+composer install
+
+# Copy environment file
+cp .env.example .env
+
+# Configure database in .env
+
+# Run migrations
+php neocore migrate
+
+# Run tests
+composer test
+```
+
+### Development Process
+
+1. **Fork & Create Branch**: `git checkout -b feature/my-feature`
+2. **Make Changes**: Write clean code following PSR-12
+3. **Test**: Run `composer test` and ensure all tests pass
+4. **Commit**: Use clear commit messages
+5. **Push & PR**: Submit pull request with description
+
+### Code Standards
+
+- Follow PSR-12 coding style
+- Use strict types: `declare(strict_types=1);`
+- Type hint everything: parameters and return types
+- Write tests for new features
+- Keep functions small and focused
+- Document complex logic
+
+### Commit Message Format
+
+```
+type(scope): subject
+
+feat: add user authentication
+fix: resolve caching issue
+docs: update installation guide
+test: add user controller tests
+```
+
+## 🔒 Security
+
+### Reporting Security Issues
+
+**Please do NOT report security vulnerabilities through public GitHub issues.**
+
+Report security issues to: **security@neophp.dev**
+
+### What to Include
+
+- Description of the vulnerability
+- Steps to reproduce
+- Potential impact
+- Suggested fix (if any)
+
+### Response Timeline
+
+- **Initial Response**: Within 48 hours
+- **Status Update**: Within 7 days
+- **Fix Release**: Depends on severity (critical: 1-7 days)
+
+### Security Features
+
+NeoPhp Framework includes:
+
+- ✅ **JWT Authentication** - Secure token-based auth
+- ✅ **RBAC** - Role-based access control
+- ✅ **SQL Injection Protection** - Prepared statements with Cycle ORM
+- ✅ **XSS Protection** - Template escaping with Latte
+- ✅ **CSRF Protection** - Token validation middleware
+- ✅ **Rate Limiting** - Built-in throttling
+- ✅ **Password Hashing** - Bcrypt/Argon2 support
+
+### Security Best Practices
+
+```php
+// ✅ Good - Use ORM (prevents SQL injection)
+$user = User::where('email', $email)->first();
+
+// ❌ Bad - Raw SQL without parameters
+$user = DB::raw("SELECT * FROM users WHERE email = '$email'");
+
+// Always validate input
+$validated = $request->validate([
+    'email' => 'required|email|max:255',
+    'password' => 'required|min:8',
+]);
+
+// Use CSRF protection
+$router->middleware(['csrf'])->group(function($router) {
+    $router->post('/profile', [ProfileController::class, 'update']);
+});
+```
+
+## 📜 Code of Conduct
+
+### Our Standards
+
+- **Be Respectful** - Treat everyone with respect
+- **Be Inclusive** - Welcome diverse perspectives
+- **Be Constructive** - Focus on helpful feedback
+- **Be Professional** - Keep discussions on topic
+
+### Unacceptable Behavior
+
+- Harassment or discrimination
+- Trolling or insulting comments
+- Publishing private information
+- Other unprofessional conduct
+
+Report issues to: conduct@neophp.dev
+
+## 📋 Changelog
+
+### Version 1.0.0 (December 2025)
+
+**Initial Release**
+
+- ✅ Core framework with routing, controllers, models
+- ✅ Cycle ORM integration (MySQL, PostgreSQL, SQLite)
+- ✅ Latte template engine
+- ✅ Authentication & Authorization (JWT, Session, RBAC)
+- ✅ Storage & Media management (Local, S3, CDN)
+- ✅ Caching system (Redis, Memcached, File)
+- ✅ REST API support
+- ✅ Logging & Monitoring
+- ✅ Localization
+- ✅ Task Scheduler
+- ✅ SEO & CMS features
+- ✅ Broadcasting (Pusher, Redis)
+- ✅ Testing utilities
+- ✅ CLI commands
 
 ## 🤝 Contributing
 
@@ -402,7 +1239,7 @@ MIT License - see [LICENSE](LICENSE) file.
 
 <div align="center">
 
-**NeoCore** - Simple. Explicit. Predictable.
+**NeoPhp** - Simple. Explicit. Predictable.
 
 Made with ❤️ by developers who value clarity
 

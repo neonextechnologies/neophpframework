@@ -2,7 +2,7 @@
 
 ## Requirements
 
-Before installing NeoCore, ensure your system meets the following requirements:
+Before installing NeoPhp, ensure your system meets the following requirements:
 
 - **PHP 8.0 or higher**
 - **PDO Extension** (for database)
@@ -15,8 +15,8 @@ Before installing NeoCore, ensure your system meets the following requirements:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/neocore.git
-cd neocore
+git clone https://github.com/yourusername/NeoPhp.git
+cd NeoPhp
 
 # Copy environment file
 cp .env.example .env
@@ -25,20 +25,20 @@ cp .env.example .env
 nano .env
 
 # Start development server
-php neocore serve
+php NeoPhp serve
 ```
 
 ### Method 2: Composer Create-Project (Coming Soon)
 
 ```bash
-composer create-project neocore/framework myproject
+composer create-project NeoPhp/framework myproject
 cd myproject
-php neocore serve
+php NeoPhp serve
 ```
 
 ### Method 3: Download ZIP
 
-1. Download the latest release from [GitHub Releases](https://github.com/yourusername/neocore/releases)
+1. Download the latest release from [GitHub Releases](https://github.com/yourusername/NeoPhp/releases)
 2. Extract to your web server directory
 3. Copy `.env.example` to `.env`
 4. Configure your environment
@@ -52,7 +52,7 @@ Edit `.env` file:
 
 ```env
 # Application
-APP_NAME="My NeoCore App"
+APP_NAME="My NeoPhp App"
 APP_ENV=development
 APP_DEBUG=true
 APP_URL=http://localhost:8000
@@ -61,7 +61,7 @@ APP_URL=http://localhost:8000
 DB_CONNECTION=mysql
 DB_HOST=localhost
 DB_PORT=3306
-DB_DATABASE=neocore
+DB_DATABASE=NeoPhp
 DB_USERNAME=root
 DB_PASSWORD=
 
@@ -79,7 +79,7 @@ QUEUE_DRIVER=file
 1. Create a database:
 
 ```sql
-CREATE DATABASE neocore CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE NeoPhp CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
 2. Update `.env` with your database credentials
@@ -87,14 +87,14 @@ CREATE DATABASE neocore CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 3. Run migrations:
 
 ```bash
-php neocore migrate
+php NeoPhp migrate
 ```
 
 ## Web Server Configuration
 
 ### Apache
 
-NeoCore includes a `.htaccess` file in the `public/` directory. Ensure `mod_rewrite` is enabled:
+NeoPhp includes a `.htaccess` file in the `public/` directory. Ensure `mod_rewrite` is enabled:
 
 ```bash
 # Ubuntu/Debian
@@ -107,16 +107,16 @@ sudo systemctl restart apache2
 ```apache
 <VirtualHost *:80>
     ServerName myapp.local
-    DocumentRoot /var/www/neocore/public
+    DocumentRoot /var/www/NeoPhp/public
     
-    <Directory /var/www/neocore/public>
+    <Directory /var/www/NeoPhp/public>
         Options Indexes FollowSymLinks
         AllowOverride All
         Require all granted
     </Directory>
     
-    ErrorLog ${APACHE_LOG_DIR}/neocore_error.log
-    CustomLog ${APACHE_LOG_DIR}/neocore_access.log combined
+    ErrorLog ${APACHE_LOG_DIR}/NeoPhp_error.log
+    CustomLog ${APACHE_LOG_DIR}/NeoPhp_access.log combined
 </VirtualHost>
 ```
 
@@ -126,7 +126,7 @@ sudo systemctl restart apache2
 server {
     listen 80;
     server_name myapp.local;
-    root /var/www/neocore/public;
+    root /var/www/NeoPhp/public;
 
     add_header X-Frame-Options "SAMEORIGIN";
     add_header X-Content-Type-Options "nosniff";
@@ -161,10 +161,10 @@ server {
 For development, use PHP's built-in server:
 
 ```bash
-php neocore serve
+php NeoPhp serve
 
 # Custom host and port
-php neocore serve 0.0.0.0 8080
+php NeoPhp serve 0.0.0.0 8080
 ```
 
 Visit `http://localhost:8000`
@@ -187,13 +187,13 @@ Test your installation:
 
 ```bash
 # List available commands
-php neocore list
+php NeoPhp list
 
 # Check PHP version
 php -v
 
 # Test database connection
-php neocore migrate
+php NeoPhp migrate
 ```
 
 Visit your application in a browser. You should see:
@@ -203,7 +203,7 @@ Visit your application in a browser. You should see:
   "success": true,
   "message": "Success",
   "data": {
-    "message": "Welcome to NeoCore PHP Framework",
+    "message": "Welcome to NeoPhp PHP Framework",
     "version": "1.0.0"
   }
 }
@@ -265,7 +265,7 @@ sudo systemctl restart apache2
 
 ## Next Steps
 
-Your NeoCore installation is ready! Continue to:
+Your NeoPhp installation is ready! Continue to:
 
 - [Configuration](configuration.md) - Learn about configuration options
 - [Directory Structure](directory-structure.md) - Understand the layout

@@ -1,11 +1,11 @@
 # Directory Structure
 
-Understanding NeoCore's directory structure will help you navigate and organize your application effectively.
+Understanding NeoPhp's directory structure will help you navigate and organize your application effectively.
 
 ## Root Directory
 
 ```
-neocore/
+NeoPhp/
 ├── app/                # Your application code
 ├── config/             # Configuration files
 ├── docs/               # Documentation
@@ -18,7 +18,7 @@ neocore/
 ├── .env.example        # Environment template
 ├── .gitignore          # Git ignore rules
 ├── composer.json       # Composer configuration
-├── neocore             # CLI tool
+├── NeoPhp             # CLI tool
 └── README.md           # Project readme
 ```
 
@@ -48,7 +48,7 @@ Handle HTTP requests and return responses:
 // app/Http/Controllers/UserController.php
 namespace App\Http\Controllers;
 
-use NeoCore\System\Core\Controller;
+use NeoPhp\System\Core\Controller;
 
 class UserController extends Controller
 {
@@ -78,7 +78,7 @@ Database interaction:
 // app/Models/User.php
 namespace App\Models;
 
-use NeoCore\System\Core\Model;
+use NeoPhp\System\Core\Model;
 
 class User extends Model
 {
@@ -134,7 +134,7 @@ Each file returns a PHP array:
 // config/app.php
 <?php
 return [
-    'name' => env('APP_NAME', 'NeoCore'),
+    'name' => env('APP_NAME', 'NeoPhp'),
     'debug' => env('APP_DEBUG', false),
 ];
 ```
@@ -273,11 +273,11 @@ tests/
 
 ## Namespace Structure
 
-NeoCore uses PSR-4 autoloading:
+NeoPhp uses PSR-4 autoloading:
 
 ```php
 // Namespace → Directory mapping
-NeoCore\System\Core\Router      → system/Core/Router.php
+NeoPhp\System\Core\Router      → system/Core/Router.php
 App\Http\Controllers\UserController → app/Http/Controllers/UserController.php
 Modules\User\Models\User        → modules/user/Models/User.php
 ```
@@ -289,7 +289,7 @@ Modules\User\Models\User        → modules/user/Models/User.php
 {
     "autoload": {
         "psr-4": {
-            "NeoCore\\System\\": "system/",
+            "NeoPhp\\System\\": "system/",
             "App\\": "app/",
             "Modules\\": "modules/"
         }
@@ -380,8 +380,8 @@ app/Http/Controllers/
 For large, isolated features, create modules:
 
 ```bash
-php neocore make:module Billing
-php neocore make:module Reporting
+php NeoPhp make:module Billing
+php NeoPhp make:module Reporting
 ```
 
 ## Next Steps

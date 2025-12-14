@@ -1,6 +1,6 @@
 # Cycle ORM
 
-NeoCore Framework มาพร้อมกับ **Cycle ORM** ซึ่งเป็น DataMapper ORM ที่รวดเร็วและปลอดภัย
+NeoPhp Framework มาพร้อมกับ **Cycle ORM** ซึ่งเป็น DataMapper ORM ที่รวดเร็วและปลอดภัย
 
 ## คุณสมบัติ
 
@@ -201,8 +201,8 @@ $users = $repository->select()
 
 namespace App\Http\Controllers;
 
-use NeoCore\System\Core\Controller;
-use NeoCore\System\Core\ORMService;
+use NeoPhp\System\Core\Controller;
+use NeoPhp\System\Core\ORMService;
 use App\Entities\User;
 use App\Repositories\UserRepository;
 

@@ -1,6 +1,6 @@
 # Configuration
 
-NeoCore's configuration system is simple and explicit. All configuration files are located in the `config/` directory.
+NeoPhp's configuration system is simple and explicit. All configuration files are located in the `config/` directory.
 
 ## Configuration Files
 
@@ -12,7 +12,7 @@ Application-level settings:
 <?php
 
 return [
-    'name' => env('APP_NAME', 'NeoCore Application'),
+    'name' => env('APP_NAME', 'NeoPhp Application'),
     'env' => env('APP_ENV', 'production'),
     'debug' => env('APP_DEBUG', false),
     'url' => env('APP_URL', 'http://localhost'),
@@ -33,7 +33,7 @@ return [
         'driver' => env('DB_CONNECTION', 'mysql'),
         'host' => env('DB_HOST', 'localhost'),
         'port' => env('DB_PORT', 3306),
-        'database' => env('DB_DATABASE', 'neocore'),
+        'database' => env('DB_DATABASE', 'NeoPhp'),
         'username' => env('DB_USERNAME', 'root'),
         'password' => env('DB_PASSWORD', ''),
         'charset' => 'utf8mb4',
@@ -126,7 +126,7 @@ Application routes:
 ```php
 <?php
 
-use NeoCore\System\Core\Router;
+use NeoPhp\System\Core\Router;
 
 return function(Router $router) {
     // Home
@@ -145,7 +145,7 @@ return function(Router $router) {
 ### Using Config Class
 
 ```php
-use NeoCore\System\Core\Config;
+use NeoPhp\System\Core\Config;
 
 // Load entire config file
 $appConfig = Config::load('app');
@@ -166,7 +166,7 @@ $queueDriver = Config::get('queue.drivers.file.path');
 ```php
 // Get from environment variable
 $debug = env('APP_DEBUG', false);
-$dbName = env('DB_DATABASE', 'neocore');
+$dbName = env('DB_DATABASE', 'NeoPhp');
 
 // Type casting
 $port = (int) env('DB_PORT', 3306);
@@ -186,7 +186,7 @@ cp .env.example .env
 
 ```env
 # Application
-APP_NAME="My NeoCore App"
+APP_NAME="My NeoPhp App"
 APP_ENV=production
 APP_DEBUG=false
 APP_URL=https://myapp.com
@@ -195,7 +195,7 @@ APP_URL=https://myapp.com
 DB_CONNECTION=mysql
 DB_HOST=localhost
 DB_PORT=3306
-DB_DATABASE=neocore_prod
+DB_DATABASE=NeoPhp_prod
 DB_USERNAME=prod_user
 DB_PASSWORD=secure_password
 
@@ -250,7 +250,7 @@ The `.gitignore` file already excludes it:
 ```env
 APP_ENV=development
 APP_DEBUG=true
-DB_DATABASE=neocore_dev
+DB_DATABASE=NeoPhp_dev
 ```
 
 ### Production Environment
@@ -258,7 +258,7 @@ DB_DATABASE=neocore_dev
 ```env
 APP_ENV=production
 APP_DEBUG=false
-DB_DATABASE=neocore_prod
+DB_DATABASE=NeoPhp_prod
 ```
 
 ### Testing Environment
@@ -266,7 +266,7 @@ DB_DATABASE=neocore_prod
 ```env
 APP_ENV=testing
 APP_DEBUG=true
-DB_DATABASE=neocore_test
+DB_DATABASE=NeoPhp_test
 ```
 
 ## Custom Configuration Files
@@ -313,10 +313,10 @@ For production, you can cache configuration (feature coming soon):
 
 ```bash
 # Cache configuration
-php neocore config:cache
+php NeoPhp config:cache
 
 # Clear configuration cache
-php neocore config:clear
+php NeoPhp config:clear
 ```
 
 ## Best Practices

@@ -1,14 +1,14 @@
 # Introduction
 
-## What is NeoCore?
+## What is NeoPhp?
 
-NeoCore is a lightweight, explicit, and predictable PHP framework designed for developers who value clarity and control over magic. Built with principles inspired by CodeIgniter 4's explicitness, but with a modern, modular architecture.
+NeoPhp is a lightweight, explicit, and predictable PHP framework designed for developers who value clarity and control over magic. Built with principles inspired by CodeIgniter 4's explicitness, but with a modern, modular architecture.
 
-## Why NeoCore?
+## Why NeoPhp?
 
 ### No Magic
 
-Everything in NeoCore is explicit and traceable. There are no hidden mechanisms, no automatic behaviors, and no surprises. When you write code, you know exactly what it does.
+Everything in NeoPhp is explicit and traceable. There are no hidden mechanisms, no automatic behaviors, and no surprises. When you write code, you know exactly what it does.
 
 ```php
 // Explicit routing - you define every route
@@ -23,11 +23,11 @@ $service = new UserService($database, $eventBus);
 
 ### Shared Hosting Ready
 
-NeoCore doesn't require Composer during runtime. Once installed, you can deploy to any shared hosting environment without worrying about dependencies.
+NeoPhp doesn't require Composer during runtime. Once installed, you can deploy to any shared hosting environment without worrying about dependencies.
 
 ### Lightweight
 
-With minimal overhead and no unnecessary abstractions, NeoCore is fast by default. The core framework is small, focused, and easy to understand.
+With minimal overhead and no unnecessary abstractions, NeoPhp is fast by default. The core framework is small, focused, and easy to understand.
 
 ### Modular
 
@@ -100,7 +100,7 @@ $stmt->execute(['date' => $date]);
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ```
 
-## When to Use NeoCore
+## When to Use NeoPhp
 
 ### Perfect For:
 
@@ -149,7 +149,7 @@ Command-line tool for scaffolding and running workers.
 
 ## Comparison with Other Frameworks
 
-| Feature | NeoCore | Laravel | CodeIgniter 4 |
+| Feature | NeoPhp | Laravel | CodeIgniter 4 |
 |---------|---------|---------|---------------|
 | Service Container | ❌ No | ✅ Yes | ✅ Yes |
 | Facades | ❌ No | ✅ Yes | ❌ No |
@@ -162,7 +162,7 @@ Command-line tool for scaffolding and running workers.
 
 ## Next Steps
 
-Ready to start? Head to the [Installation Guide](installation.md) to set up your first NeoCore project.
+Ready to start? Head to the [Installation Guide](installation.md) to set up your first NeoPhp project.
 
 Or explore:
 - [Directory Structure](directory-structure.md) - Understand the layout

@@ -1,6 +1,6 @@
 # Quick Start
 
-เริ่มต้นใช้งาน NeoCore Framework ได้ใน 5 นาที
+เริ่มต้นใช้งาน NeoPhp Framework ได้ใน 5 นาที
 
 ## ติดตั้ง
 
@@ -13,8 +13,8 @@
 ### Clone Project
 
 ```bash
-git clone https://github.com/yourusername/neocore.git
-cd neocore
+git clone https://github.com/yourusername/NeoPhp.git
+cd NeoPhp
 ```
 
 ### Install Dependencies
@@ -34,7 +34,7 @@ return [
     'driver' => 'mysql',
     'host' => 'localhost',
     'port' => 3306,
-    'database' => 'neocore_db',
+    'database' => 'NeoPhp_db',
     'username' => 'root',
     'password' => '',
     'charset' => 'utf8mb4',
@@ -58,7 +58,7 @@ APP_DEBUG=true
 DB_DRIVER=mysql
 DB_HOST=localhost
 DB_PORT=3306
-DB_DATABASE=neocore_db
+DB_DATABASE=NeoPhp_db
 DB_USERNAME=root
 DB_PASSWORD=
 ```
@@ -165,10 +165,10 @@ class PostRepository extends BaseRepository
 
 namespace App\Http\Controllers;
 
-use NeoCore\System\Core\Controller;
-use NeoCore\System\Core\Request;
-use NeoCore\System\Core\Response;
-use NeoCore\System\Core\ORMService;
+use NeoPhp\System\Core\Controller;
+use NeoPhp\System\Core\Request;
+use NeoPhp\System\Core\Response;
+use NeoPhp\System\Core\ORMService;
 use App\Entities\Post;
 use App\Repositories\PostRepository;
 
@@ -321,7 +321,7 @@ php neo --help
 ## ตัวอย่าง Project Structure
 
 ```
-neocore/
+NeoPhp/
 ├── app/
 │   ├── Entities/
 │   │   ├── User.php

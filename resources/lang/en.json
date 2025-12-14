@@ -1,0 +1,47 @@
+{
+    "welcome": "Welcome to NeoCore Framework",
+    "hello": "Hello, :name!",
+    "goodbye": "Goodbye, :name!",
+    
+    "auth": {
+        "login": "Login",
+        "logout": "Logout",
+        "register": "Register",
+        "email": "Email Address",
+        "password": "Password",
+        "remember_me": "Remember Me",
+        "forgot_password": "Forgot Your Password?",
+        "failed": "These credentials do not match our records.",
+        "throttle": "Too many login attempts. Please try again in :seconds seconds."
+    },
+
+    "pagination": {
+        "previous": "&laquo; Previous",
+        "next": "Next &raquo;"
+    },
+
+    "validation": {
+        "required": "The :attribute field is required.",
+        "email": "The :attribute must be a valid email address.",
+        "min": {
+            "numeric": "The :attribute must be at least :min.",
+            "string": "The :attribute must be at least :min characters."
+        },
+        "max": {
+            "numeric": "The :attribute may not be greater than :max.",
+            "string": "The :attribute may not be greater than :max characters."
+        },
+        "unique": "The :attribute has already been taken.",
+        "confirmed": "The :attribute confirmation does not match."
+    },
+
+    "messages": {
+        "success": "Operation completed successfully!",
+        "error": "An error occurred. Please try again.",
+        "not_found": "The requested resource was not found.",
+        "unauthorized": "You are not authorized to perform this action.",
+        "forbidden": "Access forbidden."
+    },
+
+    "items": "{0} no items|{1} one item|[2,*] :count items"
+}
