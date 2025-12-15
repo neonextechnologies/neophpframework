@@ -10,7 +10,7 @@
 
 *Powered by Cycle ORM (2-3x faster than Eloquent) and Latte Templates*
 
-[📚 Documentation](https://yoursite.gitbook.io/neophp) • [⚡ Quick Start](#-quick-start) • [✨ Features](#-features) • [🤝 Contributing](CONTRIBUTING.md)
+[📚 Documentation](https://docs.neophp.site) • [⚡ Quick Start](#-quick-start) • [✨ Features](#-features) • [🤝 Contributing](CONTRIBUTING.md)
 
 </div>
 
@@ -78,7 +78,7 @@ neo serve
 
 Your app is now running on **http://localhost:8000** 🎉
 
-For detailed installation instructions, see [📖 Installation Guide](https://yoursite.gitbook.io/neophp/installation).
+For detailed installation instructions, see [📖 Installation Guide](https://docs.neophp.site/installation).
 
 ---
 
@@ -148,7 +148,7 @@ neo test --filter=UserTest   # Run specific test
 neo test --coverage          # Generate coverage report
 ```
 
-For complete CLI reference, see [📖 CLI Commands Documentation](https://yoursite.gitbook.io/neophp/cli-commands).
+For complete CLI reference, see [📖 CLI Commands Documentation](https://docs.neophp.site/cli-commands).
 
 ---
 
@@ -174,7 +174,7 @@ $router->middleware(['auth'])->group(function($router) {
 });
 ```
 
-[📖 Learn more about Routing](https://yoursite.gitbook.io/neophp/routing)
+[📖 Learn more about Routing](https://docs.neophp.site/routing)
 
 ### Controllers with Dependency Injection
 
@@ -214,7 +214,7 @@ class UserController
 }
 ```
 
-[📖 Learn more about Controllers](https://yoursite.gitbook.io/neophp/controllers)
+[📖 Learn more about Controllers](https://docs.neophp.site/controllers)
 
 ### Cycle ORM Models
 
@@ -246,7 +246,7 @@ class User
 }
 ```
 
-[📖 Learn more about Cycle ORM](https://yoursite.gitbook.io/neophp/database-orm)
+[📖 Learn more about Cycle ORM](https://docs.neophp.site/database-orm)
 
 ### Latte Templates
 
@@ -287,7 +287,7 @@ class User
 {/block}
 ```
 
-[📖 Learn more about Latte Templates](https://yoursite.gitbook.io/neophp/views-templates)
+[📖 Learn more about Latte Templates](https://docs.neophp.site/views-templates)
 
 ---
 
@@ -354,7 +354,7 @@ neophpframework/
 └── README.md             # This file
 ```
 
-[📖 Learn more about Directory Structure](https://yoursite.gitbook.io/neophp/directory-structure)
+[📖 Learn more about Directory Structure](https://docs.neophp.site/directory-structure)
 
 ---
 
@@ -420,28 +420,28 @@ Everything you need for modern web development:
 Complete documentation is available on GitBook:
 
 ### 🚀 Getting Started
-- [Installation Guide](https://yoursite.gitbook.io/neophp/installation)
-- [Quick Start Tutorial](https://yoursite.gitbook.io/neophp/quick-start)
-- [Configuration](https://yoursite.gitbook.io/neophp/configuration)
-- [Directory Structure](https://yoursite.gitbook.io/neophp/directory-structure)
+- [Installation Guide](https://docs.neophp.site/installation)
+- [Quick Start Tutorial](https://docs.neophp.site/quick-start)
+- [Configuration](https://docs.neophp.site/configuration)
+- [Directory Structure](https://docs.neophp.site/directory-structure)
 
 ### 📚 Core Concepts
-- [Routing](https://yoursite.gitbook.io/neophp/routing)
-- [Controllers](https://yoursite.gitbook.io/neophp/controllers)
-- [Views & Templates](https://yoursite.gitbook.io/neophp/views)
-- [Database & ORM](https://yoursite.gitbook.io/neophp/database-orm)
-- [Authentication](https://yoursite.gitbook.io/neophp/authentication)
-- [Authorization & RBAC](https://yoursite.gitbook.io/neophp/authorization)
+- [Routing](https://docs.neophp.site/routing)
+- [Controllers](https://docs.neophp.site/controllers)
+- [Views & Templates](https://docs.neophp.site/views)
+- [Database & ORM](https://docs.neophp.site/database-orm)
+- [Authentication](https://docs.neophp.site/authentication)
+- [Authorization & RBAC](https://docs.neophp.site/authorization)
 
 ### 🔧 Advanced Topics
-- [REST API Development](https://yoursite.gitbook.io/neophp/rest-api)
-- [Queue & Background Jobs](https://yoursite.gitbook.io/neophp/queue-system)
-- [Real-time Broadcasting](https://yoursite.gitbook.io/neophp/broadcasting)
-- [Caching Strategies](https://yoursite.gitbook.io/neophp/caching)
-- [Task Scheduling](https://yoursite.gitbook.io/neophp/scheduler)
-- [Testing](https://yoursite.gitbook.io/neophp/testing)
+- [REST API Development](https://docs.neophp.site/rest-api)
+- [Queue & Background Jobs](https://docs.neophp.site/queue-system)
+- [Real-time Broadcasting](https://docs.neophp.site/broadcasting)
+- [Caching Strategies](https://docs.neophp.site/caching)
+- [Task Scheduling](https://docs.neophp.site/scheduler)
+- [Testing](https://docs.neophp.site/testing)
 
-[📚 View Full Documentation](https://yoursite.gitbook.io/neophp)
+[📚 View Full Documentation](https://docs.neophp.site)
 
 ---
 
@@ -541,7 +541,7 @@ Built with excellent open-source packages:
 
 ## 💬 Support & Community
 
-- **📚 Documentation**: [GitBook](https://yoursite.gitbook.io/neophp)
+- **📚 Documentation**: [GitBook](https://docs.neophp.site)
 - **🐛 Issues**: [GitHub Issues](https://github.com/yourusername/neophpframework/issues)
 - **💬 Discussions**: [GitHub Discussions](https://github.com/yourusername/neophpframework/discussions)
 - **📧 Email**: support@neophp.dev
@@ -553,6 +553,6 @@ Built with excellent open-source packages:
 
 **Built with ❤️ by developers who value clarity and performance**
 
-[⭐ Star on GitHub](https://github.com/yourusername/neophpframework) • [📖 Read the Docs](https://yoursite.gitbook.io/neophp) • [💬 Join Discussion](https://github.com/yourusername/neophpframework/discussions)
+[⭐ Star on GitHub](https://github.com/yourusername/neophpframework) • [📖 Read the Docs](https://docs.neophp.site) • [💬 Join Discussion](https://github.com/yourusername/neophpframework/discussions)
 
 </div>
